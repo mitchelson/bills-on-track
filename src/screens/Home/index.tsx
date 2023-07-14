@@ -1,4 +1,5 @@
 import { calcBalance } from "../../common";
+import MonthlyFinanceBox from "../../components/MonthlyFinanceBox";
 import * as S from "./styles";
 import { useHomeView } from "./viewModel";
 
@@ -23,6 +24,12 @@ const Home = () => {
             </S.BalanceCents>
           </S.Balance>
         </S.BoxBalance>
+        <MonthlyFinanceBox
+          currentBalance={0}
+          expectedBalance={0}
+          monthlyExpenses={0}
+          month="Julho"
+        />
       </S.Content>
     </S.Container>
   );

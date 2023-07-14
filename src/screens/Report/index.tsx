@@ -3,7 +3,9 @@ import * as S from "./styles";
 const Report = () => {
   return (
     <S.Container>
-      <S.Title>Report Screen</S.Title>
+      <S.Content>
+        <S.TitlePage>Relatórios</S.TitlePage>
+      </S.Content>
     </S.Container>
   );
 };

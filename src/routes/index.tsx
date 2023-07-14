@@ -3,6 +3,7 @@ import React from "react";
 import Icons from "../components/Icons";
 import Home from "../screens/Home";
 import Report from "../screens/Report";
+import Settings from "../screens/Settings";
 import { darkTheme } from "../theme/colors";
 
 const Tab = createBottomTabNavigator();
@@ -41,6 +42,18 @@ const Routes = () => {
         }}
         name="Report"
         component={Report}
+      />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ focused, color }) => (
+            <Icons
+              name="settings"
+              color={focused ? color : darkTheme.grey100}
+            />
+          ),
+        }}
+        name="Settings"
+        component={Settings}
       />
     </Tab.Navigator>
   );
