@@ -22,6 +22,35 @@ export const Name = styled.Text`
   font-weight: bold;
 `;
 
+export const BoxBalance = styled.View`
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  padding: 20px;
+  border: 1px;
+  border-radius: 10px;
+  border-color: ${({ theme }) => theme.grey100};
+  margin-top: 20px;
+  background-color: ${({ theme }) => theme.black};
+`;
+
+export const TitleBalance = styled.Text`
+  color: ${({ theme }) => theme.title};
+  font-size: 16px;
+`;
+
+export const Balance = styled.Text`
+  color: ${({ theme }) => theme.title};
+  font-size: 50px;
+  font-weight: bold;
+`;
+
+export const BalanceCents = styled.Text`
+  color: ${({ theme }) => theme.title};
+  font-size: 30px;
+  font-weight: normal;
+`;
+
 export const Avatar = styled.Image`
   width: 60px;
   height: 60px;

@@ -5,6 +5,11 @@ import { User } from "../../types";
 export const useHomeView = () => {
   const [user, setUser] = useState<User | null>(null);
 
+  const [balance, setBalance] = useState(120000);
+  const [expenses, setExpenses] = useState(120000);
+  const [expected, setExpected] = useState(120000);
+  const [current, setCurrent] = useState(120000);
+
   useEffect(() => {
     async function getUserInfo() {
       const user = await AsyncStorage.getItem("@BOT:user");
@@ -17,5 +22,6 @@ export const useHomeView = () => {
 
   return {
     user,
+    balance,
   };
 };

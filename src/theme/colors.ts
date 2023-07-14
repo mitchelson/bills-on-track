@@ -6,7 +6,7 @@ export const darkTheme = {
   text: '#fff',
 
   accent: '#8A85FF',
-  grey100: '#eee',
+  grey100: '#888',
   black: '#000',
 
   grey300: '#333',
