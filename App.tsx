@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { NavigationContainer } from "@react-navigation/native";
+import { useEffect, useState } from "react";
+import Routes from "./src/routes";
+import Login from "./src/screen/Login";
 
 export default function App() {
+  const [user, setUser] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function getUserInfo() {
+      const user = await AsyncStorage.getItem("@BOT:user");
+      setUser(user);
+    }
+    getUserInfo();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>{user ? <Routes /> : <Login />}</NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
