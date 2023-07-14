@@ -29,7 +29,7 @@ Note: Ensure you have Node.js and a compatible development environment set up be
 
 ## Screen Shots
 
-![alt text](https://github.com/mitchelson/bills-on-track/blob/main/src/assets/image/homeScreen.png)
+![alt text](https://github.com/mitchelson/bills-on-track/blob/main/src/assets/image/homeScreen.png?width=200)
 
 ![alt text](https://github.com/mitchelson/bills-on-track/blob/main/src/assets/image/loginScreen.png)
 
