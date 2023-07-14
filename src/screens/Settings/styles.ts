@@ -13,3 +13,18 @@ export const TitlePage = styled.Text`
   font-weight: bold;
   color: ${({ theme }) => theme.title};
 `;
+
+export const TextButton = styled.Text`
+  color: ${({ theme }) => theme.title};
+  font-size: 20px;
+  font-weight: 400;
+`;
+
+export const Button = styled.TouchableOpacity`
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: ${({ theme }) => theme.danger};
+  margin: 16px;
+`;

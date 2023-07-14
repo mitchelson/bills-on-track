@@ -5,7 +5,7 @@ import { Image } from "react-native";
 import IconGoogle from "../../assets/icons/google.png";
 import * as S from "./styles";
 
-const Login = () => {
+const Auth = () => {
   const [request, response, promptAsync] = Google.useAuthRequest({
     androidClientId:
       "981331326290-jagqia50991ib7q6k71u7lm1p4ghccc6.apps.googleusercontent.com",
@@ -39,7 +39,7 @@ const Login = () => {
       ) {
         await getUserInfo(response.authentication?.accessToken);
       } else {
-        // setUserInfo(JSON.parse (user) ) ;
+        // setUserInfo(JSON.parse(user));
       }
     }
   };
@@ -51,8 +51,8 @@ const Login = () => {
   return (
     <S.Container>
       <S.Content>
-        <S.Title>Bills On Track</S.Title>
-        <S.Text>{`Seu aplicativo de\ngerenciamento de gastos`}</S.Text>
+        <S.Title>{`Bills On Track`}</S.Title>
+        <S.Text>{`Seu gerenciador\npessoal finanças`}</S.Text>
         <S.Button onPress={() => promptAsync()}>
           <Image
             resizeMethod="resize"
@@ -69,4 +69,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Auth;

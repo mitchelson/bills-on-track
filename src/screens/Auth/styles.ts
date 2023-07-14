@@ -5,10 +5,11 @@ export const Container = styled.SafeAreaView`
   flex: 1;
   align-items: center;
   justify-content: center;
+  background-color: ${({ theme }) => theme.background};
 `;
 
 export const Content = styled.View`
-  padding: 16px;
+  padding: 30px;
   align-items: center;
   justify-content: center;
   flex: 1;
@@ -17,15 +18,18 @@ export const Content = styled.View`
 
 export const Title = styled.Text`
   color: ${({ theme }) => theme.primary};
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
 `;
 
 export const Text = styled.Text`
   color: ${({ theme }) => theme.title};
-  font-size: 20px;
+  font-size: 23px;
   text-align: center;
   margin: 20px;
+  margin-bottom: 60px;
 `;
 
 export const Button = styled.TouchableOpacity`

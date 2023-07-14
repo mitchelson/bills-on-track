@@ -1,61 +1,34 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import React from "react";
-import Icons from "../components/Icons";
-import Home from "../screens/Home";
-import Report from "../screens/Report";
-import Settings from "../screens/Settings";
-import { darkTheme } from "../theme/colors";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React, { useEffect, useState } from "react";
+import Auth from "../screens/Auth";
+import AppRoutes from "./app.route";
 
-const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 const Routes = () => {
+  const [user, setUser] = useState<string | null | number>(0);
+
+  useEffect(() => {
+    async function getUserInfo() {
+      const user = await AsyncStorage.getItem("@BOT:user");
+      setUser(user);
+    }
+    getUserInfo();
+  }, []);
+
   return (
-    <Tab.Navigator
-      sceneContainerStyle={{
-        backgroundColor: darkTheme.background,
-      }}
+    <Stack.Navigator
       screenOptions={{
-        tabBarActiveTintColor: darkTheme.primary,
         headerShown: false,
-        tabBarShowLabel: false,
-        tabBarStyle: {
-          height: 100,
-          backgroundColor: "#222",
-          borderTopColor: "#222",
-        },
       }}
     >
-      <Tab.Screen
-        options={{
-          tabBarIcon: ({ focused, color }) => (
-            <Icons name="home" color={focused ? color : darkTheme.grey100} />
-          ),
-        }}
-        name="Home"
-        component={Home}
-      />
-      <Tab.Screen
-        options={{
-          tabBarIcon: ({ focused, color }) => (
-            <Icons name="repeat" color={focused ? color : darkTheme.grey100} />
-          ),
-        }}
-        name="Report"
-        component={Report}
-      />
-      <Tab.Screen
-        options={{
-          tabBarIcon: ({ focused, color }) => (
-            <Icons
-              name="settings"
-              color={focused ? color : darkTheme.grey100}
-            />
-          ),
-        }}
-        name="Settings"
-        component={Settings}
-      />
-    </Tab.Navigator>
+      {user ? (
+        <Stack.Screen name="Routes" component={AppRoutes} />
+      ) : (
+        <Stack.Screen name="Login" component={Auth} />
+      )}
+    </Stack.Navigator>
   );
 };
 

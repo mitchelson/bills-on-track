@@ -11,6 +11,8 @@ export const darkTheme = {
 
   grey300: '#333',
   grey200: '#222',
+
+  danger: '#A33',
 }
 
 export type BaseTheme = typeof darkTheme;
