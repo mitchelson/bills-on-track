@@ -1,7 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Google from "expo-auth-session/providers/google";
 import React, { useEffect } from "react";
-import { Button } from "react-native";
+import { Image } from "react-native";
+import IconGoogle from "../../assets/icons/google.png";
 import * as S from "./styles";
 
 const Login = () => {
@@ -49,8 +50,21 @@ const Login = () => {
 
   return (
     <S.Container>
-      <S.Title>Login Screen</S.Title>
-      <Button title="Login" onPress={() => promptAsync()} />
+      <S.Content>
+        <S.Title>Bills On Track</S.Title>
+        <S.Text>{`Seu aplicativo de\ngerenciamento de gastos`}</S.Text>
+        <S.Button onPress={() => promptAsync()}>
+          <Image
+            resizeMethod="resize"
+            resizeMode="contain"
+            style={{
+              height: 30,
+            }}
+            source={IconGoogle}
+          />
+          <S.TextButton>Continuar com Google</S.TextButton>
+        </S.Button>
+      </S.Content>
     </S.Container>
   );
 };
