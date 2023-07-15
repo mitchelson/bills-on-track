@@ -27,7 +27,7 @@ To run the Bills on Track app on your local machine, follow these steps:
 
 Note: Ensure you have Node.js and a compatible development environment set up before starting.
 
-## Screen Shots
+## Screenshots
 
 <img src="https://github.com/mitchelson/bills-on-track/blob/main/src/assets/image/loginScreen.png" width="258"/> <img src="https://github.com/mitchelson/bills-on-track/blob/main/src/assets/image/homeScreen.png" width="258"/>
 
