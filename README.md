@@ -30,8 +30,7 @@ To run the Bills on Track app on your local machine, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/mitchelson/bills-on-track.git`
 2. Install dependencies: `cd bills-on-track` and run `npm install` or `yarn install`
-3. Start the development server: `npm start` or `yarn start`
-4. Use the Expo app on your mobile device to scan the QR code displayed in the terminal or in the Expo DevTools interface.
+3. Start the development server: `npx expo run:ios` or `npx expo run:android`
 
 Note: Ensure you have Node.js and a compatible development environment set up before starting.
 
