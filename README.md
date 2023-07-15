@@ -1,3 +1,11 @@
+<p>
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/Expo-1B1F23?style=for-the-badge&logo=expo&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white"/>
+  <img src="https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white"/>
+</p>
+
 # Bills on Track - Monthly Finance Management App
 
 Bills on Track is a mobile application developed in React Native with Expo, using TypeScript. The app is designed to help users efficiently manage their monthly finances by tracking their monthly and daily expenses.
@@ -42,6 +50,11 @@ The Bills on Track app is open source and released under the [MIT License](https
 ## Contact
 
 If you have any questions or inquiries, please contact the project maintainer at [mitchelsonps@gmail.com](mailto:mitchelsonps@gmail.com).
+
+<a href="https://www.paypal.com/donate/?hosted_button_id=4D7SBTQ8GC252">
+  <img src="https://avatars.githubusercontent.com/u/19330404?v=4" width=170/><br />
+  <img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black"/>
+</a>
 
 ---
 
