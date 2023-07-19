@@ -1,11 +1,14 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Google from "expo-auth-session/providers/google";
 import React, { useEffect } from "react";
 import { Image } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 import IconGoogle from "../../assets/icons/google.png";
+import { logIn, logOf } from "../../store/actions/user.action";
 import * as S from "./styles";
 
 const Auth = () => {
+  const dispatch = useDispatch();
+  const isLogged = useSelector((state) => state.user.isLogged);
   const [request, response, promptAsync] = Google.useAuthRequest({
     androidClientId:
       "981331326290-jagqia50991ib7q6k71u7lm1p4ghccc6.apps.googleusercontent.com",
@@ -26,20 +29,19 @@ const Auth = () => {
       );
 
       const user = await response.json();
-      await AsyncStorage.setItem("@BOT:user", JSON.stringify(user));
+      dispatch(logIn(user));
     } catch (err) {}
   };
 
   const handleSingInWithGoogle = async () => {
-    const user = await AsyncStorage.getItem("@BOT:user");
-    if (!user) {
+    if (!isLogged) {
       if (
         response?.type === "success" &&
         response.authentication?.accessToken
       ) {
         await getUserInfo(response.authentication?.accessToken);
       } else {
-        // setUserInfo(JSON.parse(user));
+        dispatch(logOf());
       }
     }
   };

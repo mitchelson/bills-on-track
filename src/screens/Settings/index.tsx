@@ -1,11 +1,13 @@
 import React from "react";
 
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useDispatch } from "react-redux";
+import { logOf } from "../../store/actions/user.action";
 import * as S from "./styles";
 
 const Settings = () => {
+  const dispatch = useDispatch();
   const handleLogOf = async () => {
-    await AsyncStorage.removeItem("@BOT:user");
+    dispatch(logOf());
   };
 
   return (

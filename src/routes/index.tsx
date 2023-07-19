@@ -1,21 +1,17 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import Auth from "../screens/Auth";
 import AppRoutes from "./app.route";
 
 const Stack = createNativeStackNavigator();
 
 const Routes = () => {
-  const [user, setUser] = useState<string | null | number>(0);
+  const isLogged = useSelector((state) => state.user.isLogged);
 
   useEffect(() => {
-    async function getUserInfo() {
-      const user = await AsyncStorage.getItem("@BOT:user");
-      setUser(user);
-    }
-    getUserInfo();
-  }, []);
+    console.log("isLogged => ", isLogged);
+  }, [isLogged]);
 
   return (
     <Stack.Navigator
@@ -23,7 +19,7 @@ const Routes = () => {
         headerShown: false,
       }}
     >
-      {user ? (
+      {isLogged ? (
         <Stack.Screen name="Routes" component={AppRoutes} />
       ) : (
         <Stack.Screen name="Login" component={Auth} />
