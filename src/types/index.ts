@@ -22,17 +22,22 @@ export type IconsProps = {
 };
 
 export type BillDTO = {
+  id: string; // id da transação
+  name: string; // nome da transação, ex: conta de luz
   type: "outcome" | "income"; // tipo da transação
   value: number; // valor da transação em centavos
   description?: string; // descrição 
   categoryId: string; // categoria
-  name: string; // nome da transação, ex: conta de luz
-  id: string; // id da transação
   isRecurringPayment: boolean; // caso seja um pagamento recorrente
   frequencyInterval: string; // frequencia do pagamento recorrente
   installments: number; // quantidade de parcelas do pagamento recorrente
-  paymentDate: string; // data da transação
+  paymentDate: string; // data de efetivação da transação
   status: string; // status da transação
   createdAt: string; // data da criação do transação
   updatedAt: string; // data da atualização da transação
+}
+
+export type StateTransactions = {
+  transactions: BillDTO[];
+  currentBalance: number;
 }
