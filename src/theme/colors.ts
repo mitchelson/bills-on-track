@@ -1,19 +1,19 @@
 export const darkTheme = {
-  primary: '#28B473',
-  background: '#333',
+  primary: "#28B473",
+  background: "#333",
 
-  title: '#fff',
-  text: '#fff',
+  title: "#fff",
+  text: "#fff",
 
-  accent: '#8A85FF',
-  grey100: '#888',
-  black: '#000',
+  accent: "#8A85FF",
+  grey100: "#888",
+  black: "#000",
 
-  grey300: '#333',
-  grey200: '#222',
+  grey300: "#333",
+  grey200: "#222",
 
-  danger: '#A33',
-}
+  danger: "#A33",
+};
 
 export type BaseTheme = typeof darkTheme;
 export type Theme = { theme: BaseTheme };

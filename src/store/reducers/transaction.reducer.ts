@@ -10,19 +10,19 @@ const transactions = (state = initialState, action: any) => {
     case keys.CREATE_NEW_TRANSACTION: {
       return {
         isLogged: true,
-        profile: action.payload
+        profile: action.payload,
       };
     }
     case keys.DELETE_TRANSACTION: {
       return {
         isLogged: false,
-        profile: {}
+        profile: {},
       };
     }
     case keys.UPDATE_TRANSACTION: {
       return {
         isLogged: true,
-        profile: action.payload
+        profile: action.payload,
       };
     }
     default: {

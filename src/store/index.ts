@@ -1,17 +1,17 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useDispatch, useSelector } from 'react-redux';
-import { applyMiddleware, combineReducers, compose, createStore, } from 'redux';
-import { persistReducer, persistStore } from 'redux-persist';
-import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
-import thunk from 'redux-thunk';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useDispatch, useSelector } from "react-redux";
+import { applyMiddleware, combineReducers, compose, createStore } from "redux";
+import { persistReducer, persistStore } from "redux-persist";
+import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
+import thunk from "redux-thunk";
 
 export default (features = [], initialState = {}) => {
   const reducers = features;
 
   const persistConfig = {
-    key: '@BOT:',
+    key: "@BOT:",
     storage: AsyncStorage,
-    whitelist: ['transactions', 'user'],
+    whitelist: ["transactions", "user"],
     stateReconciler: autoMergeLevel2,
   };
 

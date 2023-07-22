@@ -1,14 +1,14 @@
-declare module '*.jpg';
-declare module '*.png';
+declare module "*.jpg";
+declare module "*.png";
 
-declare module 'react-redux' {
-  import { ThunkDispatch } from 'redux-thunk';
+declare module "react-redux" {
+  import { ThunkDispatch } from "redux-thunk";
 
-  export * from 'react-redux';
+  export * from "react-redux";
 
   export type RootState = {
-    user: typeof import('./store/reducers/user.reducer').initialState;
-    transactions: typeof import('./store/reducers/transaction.reducer').initialState;
+    user: typeof import("./store/reducers/user.reducer").initialState;
+    transactions: typeof import("./store/reducers/transaction.reducer").initialState;
   };
 
   export function useDispatch<
@@ -20,7 +20,7 @@ declare module 'react-redux' {
     equalityFn?: (left: TSelected, right: TSelected) => boolean,
   ): TSelected;
 
-  export function useStore<TState = RootState>(): import('redux').Store<TState>;
+  export function useStore<TState = RootState>(): import("redux").Store<TState>;
 
   export function batch(fn: () => void): void;
 }

@@ -25,7 +25,7 @@ const Auth = () => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       const user = await response.json();

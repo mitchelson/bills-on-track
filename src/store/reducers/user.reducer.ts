@@ -9,16 +9,15 @@ export const initialState = {
 const user = (state = initialState, action: any) => {
   switch (action.type) {
     case keys.SAVE_USER_DATA: {
-      console.log("save user => ", action)
       return {
         isLogged: true,
-        profile: action.payload
+        profile: action.payload,
       };
     }
     case keys.DELETE_USER_DATA: {
       return {
         isLogged: false,
-        profile: {}
+        profile: {},
       };
     }
     default: {

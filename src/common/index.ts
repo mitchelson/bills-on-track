@@ -1,17 +1,17 @@
-import dinero from 'dinero.js';
-import { Store } from 'redux';
-import { Persistor } from 'redux-persist';
-dinero.globalLocale = 'pt-BR'
+import dinero from "dinero.js";
+import { Store } from "redux";
+import { Persistor } from "redux-persist";
+dinero.globalLocale = "pt-BR";
 
 export const calcBalance = (value: number) => {
   const balance = dinero({
     amount: value,
     currency: "BRL",
-    precision: 2
-  }).toFormat()
+    precision: 2,
+  }).toFormat();
 
   return balance;
-}
+};
 
 let store: Store | undefined;
 let persistor: Persistor | undefined;

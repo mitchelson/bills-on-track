@@ -1,1 +1,1 @@
-export { default as googleIcon } from './icons/google.png';
+export { default as googleIcon } from "./icons/google.png";
