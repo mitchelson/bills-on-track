@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import * as Google from "expo-auth-session/providers/google";
 import React, { useEffect } from "react";
 import { Image } from "react-native";
@@ -47,6 +48,12 @@ const Auth = () => {
     }
   };
 
+  const { navigate } = useNavigation();
+
+  const handleTerms = () => {
+    navigate("TermsOfUse" as never);
+  };
+
   useEffect(() => {
     handleSingInWithGoogle();
   }, [response]);
@@ -77,8 +84,13 @@ const Auth = () => {
           </S.Button>
           <S.TermText>
             Ao continuar, estou de acordo com os{" "}
-            <S.UnderlineTermText>Termos de Uso</S.UnderlineTermText> e com o{" "}
-            <S.UnderlineTermText>Aviso de Privacidade.</S.UnderlineTermText>
+            <S.UnderlineTermText onPress={handleTerms}>
+              Termos de Uso
+            </S.UnderlineTermText>{" "}
+            e com o{" "}
+            <S.UnderlineTermText onPress={handleTerms}>
+              Aviso de Privacidade.
+            </S.UnderlineTermText>
           </S.TermText>
         </S.Box>
       </S.Content>
