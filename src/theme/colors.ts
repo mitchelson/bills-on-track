@@ -21,7 +21,6 @@ export const darkTheme = {
 
   textButtonDisabled: "#555",
   textButtonOutlineDisabled: "#999",
-
 };
 
 export type BaseTheme = typeof darkTheme;
