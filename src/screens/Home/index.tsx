@@ -1,4 +1,5 @@
 import { calcBalance } from "../../common";
+import Button from "../../components/Button";
 import MonthlyFinanceBox from "../../components/MonthlyFinanceBox";
 import * as S from "./styles";
 import { useHomeView } from "./viewModel";
@@ -30,6 +31,7 @@ const Home = () => {
           monthlyExpenses={0}
           month="Julho"
         />
+        <Button text="Botão" width={40} />
       </S.Content>
     </S.Container>
   );
