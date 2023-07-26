@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "billsontrack.app"
-               BlueprintName = "billsontrack"
-               ReferencedContainer = "container:billsontrack.xcodeproj">
+               BuildableName = "BillsonTrack.app"
+               BlueprintName = "BillsonTrack"
+               ReferencedContainer = "container:BillsonTrack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "billsontrackTests.xctest"
-               BlueprintName = "billsontrackTests"
-               ReferencedContainer = "container:billsontrack.xcodeproj">
+               BuildableName = "BillsonTrackTests.xctest"
+               BlueprintName = "BillsonTrackTests"
+               ReferencedContainer = "container:BillsonTrack.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "billsontrack.app"
-            BlueprintName = "billsontrack"
-            ReferencedContainer = "container:billsontrack.xcodeproj">
+            BuildableName = "BillsonTrack.app"
+            BlueprintName = "BillsonTrack"
+            ReferencedContainer = "container:BillsonTrack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "billsontrack.app"
-            BlueprintName = "billsontrack"
-            ReferencedContainer = "container:billsontrack.xcodeproj">
+            BuildableName = "BillsonTrack.app"
+            BlueprintName = "BillsonTrack"
+            ReferencedContainer = "container:BillsonTrack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

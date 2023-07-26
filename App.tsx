@@ -23,7 +23,7 @@ injectStore(store, persistor);
 export default function App() {
   return (
     <ThemeProvider theme={darkTheme as DefaultTheme}>
-      <StatusBar barStyle={"light-content"} backgroundColor="#333" />
+      <StatusBar barStyle={"dark-content"} backgroundColor="#333" />
       <Provider store={store}>
         <PersistGate persistor={persistor}>
           <View style={{ flex: 1, backgroundColor: "#333" }}>

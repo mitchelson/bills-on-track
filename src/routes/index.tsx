@@ -1,17 +1,13 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import Auth from "../screens/Auth";
 import AppRoutes from "./app.route";
+import AuthRoutes from "./auth.route";
 
 const Stack = createNativeStackNavigator();
 
 const Routes = () => {
   const isLogged = useSelector((state) => state.user.isLogged);
-
-  useEffect(() => {
-    console.log("isLogged => ", isLogged);
-  }, [isLogged]);
 
   return (
     <Stack.Navigator
@@ -22,7 +18,7 @@ const Routes = () => {
       {isLogged ? (
         <Stack.Screen name="Routes" component={AppRoutes} />
       ) : (
-        <Stack.Screen name="Login" component={Auth} />
+        <Stack.Screen name="AuthRoutes" component={AuthRoutes} />
       )}
     </Stack.Navigator>
   );

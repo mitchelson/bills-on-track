@@ -1,8 +1,8 @@
 export const darkTheme = {
   primary: "#28B473",
-  background: "#333",
+  background: "#fff",
 
-  title: "#fff",
+  title: "#333",
   text: "#fff",
 
   accent: "#8A85FF",
