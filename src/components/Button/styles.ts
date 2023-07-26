@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
 type ButtonProps = {
   loading?: boolean;
@@ -9,7 +9,7 @@ type ButtonProps = {
 };
 
 export const Container = styled.TouchableOpacity<ButtonProps>`
-  width: ${({ width }) => width ? `${width}%` : '100%'};
+  width: ${({ width }) => (width ? width : 100)}%;
   height: 48px;
   border-radius: 8px;
 
@@ -22,15 +22,15 @@ export const Container = styled.TouchableOpacity<ButtonProps>`
   background-color: ${({ theme, type, loading, disabled }) =>
     disabled && type !== "outline"
       ? theme.buttonDisabled
-      : !type || type === "primary" ?
-        theme.primaryButton
+      : !type || type === "primary"
+        ? theme.primaryButton
         : type === "secondary"
           ? theme.secondaryButton
-          : 'transparent'
-  };
+          : "transparent"};
 
-  border-color: ${({ theme, disabled }) => disabled ? theme.buttonDisabled : theme.white};
-  border-width: ${({ type }) => type && type === "outline" ? '1px' : 0};
+  border-color: ${({ theme, disabled }) =>
+    disabled ? theme.buttonDisabled : theme.white};
+  border-width: ${({ type }) => (type && type === "outline" ? "1px" : 0)};
 `;
 
 export const Text = styled.Text<ButtonProps>`
@@ -38,7 +38,16 @@ export const Text = styled.Text<ButtonProps>`
   font-weight: 500;
   text-align: center;
   width: 100%;
-  color: ${({ theme, type, disabled }) => disabled ? type !== "outline" ? theme.textButtonDisabled : theme.textButtonOutlineDisabled : type && type === "outline" ? theme.white : theme.grey200};
+  color: ${({ theme, type, disabled }) =>
+    disabled
+      ? type !== "outline"
+        ? theme.textButtonDisabled
+        : theme.textButtonOutlineDisabled
+      : type && type === "outline"
+        ? theme.white
+        : theme.grey200};
 `;
 
-export const ActivityIndicator = styled.ActivityIndicator.attrs(({ theme }) => ({ color: theme.white }))``;
+export const ActivityIndicator = styled.ActivityIndicator.attrs(
+  ({ theme }) => ({ color: theme.white }),
+)``;
