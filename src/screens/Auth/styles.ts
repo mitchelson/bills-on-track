@@ -69,7 +69,7 @@ export const UnderlineTermText = styled.Text`
 `;
 
 export const TextButton = styled.Text`
-  color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => theme.title};
   font-size: 20px;
   text-align: center;
   margin: 12px 0px;
