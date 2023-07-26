@@ -8,11 +8,20 @@ export const darkTheme = {
   accent: "#8A85FF",
   grey100: "#888",
   black: "#000",
+  white: "#fff",
 
   grey300: "#333",
   grey200: "#222",
 
   danger: "#A33",
+
+  primaryButton: "#28B473",
+  secondaryButton: "#fff",
+  buttonDisabled: "#ababab",
+
+  textButtonDisabled: "#555",
+  textButtonOutlineDisabled: "#999",
+
 };
 
 export type BaseTheme = typeof darkTheme;
