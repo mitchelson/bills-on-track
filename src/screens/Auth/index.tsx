@@ -2,6 +2,7 @@ import * as Google from "expo-auth-session/providers/google";
 import React, { useEffect } from "react";
 import { Image } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
+import { imageLoginScreen } from "../../assets";
 import IconGoogle from "../../assets/icons/google.png";
 import { logIn, logOf } from "../../store/actions/user.action";
 import * as S from "./styles";
@@ -53,19 +54,33 @@ const Auth = () => {
   return (
     <S.Container>
       <S.Content>
-        <S.Title>{`Bills On Track`}</S.Title>
-        <S.Text>{`Seu gerenciador\npessoal finanças`}</S.Text>
-        <S.Button onPress={() => promptAsync()}>
-          <Image
+        <S.Box>
+          <S.ImageWomen
             resizeMethod="resize"
-            resizeMode="contain"
-            style={{
-              height: 30,
-            }}
-            source={IconGoogle}
+            resizeMode="stretch"
+            source={imageLoginScreen}
           />
-          <S.TextButton>Continuar com Google</S.TextButton>
-        </S.Button>
+          <S.Title>{`Controle financeiro na palma da sua mão!`}</S.Title>
+          <S.Text>{`Vamos ajudá-lo a tomar o controle de suas finanças de maneira simples e intuitiva.`}</S.Text>
+        </S.Box>
+        <S.Box>
+          <S.Button onPress={() => promptAsync()}>
+            <Image
+              resizeMethod="resize"
+              resizeMode="contain"
+              style={{
+                height: 30,
+              }}
+              source={IconGoogle}
+            />
+            <S.TextButton>Continuar com Google</S.TextButton>
+          </S.Button>
+          <S.TermText>
+            Ao continuar, estou de acordo com os{" "}
+            <S.UnderlineTermText>Termos de Uso</S.UnderlineTermText> e com o{" "}
+            <S.UnderlineTermText>Aviso de Privacidade.</S.UnderlineTermText>
+          </S.TermText>
+        </S.Box>
       </S.Content>
     </S.Container>
   );
