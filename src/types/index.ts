@@ -13,8 +13,8 @@ export interface User {
 
 export type MonthlyFinanceProps = {
   month?: string;
-  currentBalance: number;
   expectedBalance: number;
+  expectedRevenue: number;
   monthlyExpenses: number;
 };
 

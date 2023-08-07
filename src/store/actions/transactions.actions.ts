@@ -1,0 +1,21 @@
+
+import { BillDTO } from "../../types";
+import * as keys from "../constants/transactions";
+
+export const createNewTransaction = (transaction: BillDTO) => {
+  return (dispatch: any) => {
+    dispatch({ type: keys.CREATE_NEW_TRANSACTION, payload: transaction });
+  };
+};
+
+export const updateTransaction = (transaction: BillDTO) => {
+  return (dispatch: any) => {
+    dispatch({ type: keys.UPDATE_TRANSACTION, payload: transaction });
+  };
+};
+
+export const deleteTransaction = (transactionId: string) => {
+  return (dispatch: any) => {
+    dispatch({ type: keys.DELETE_TRANSACTION, payload: transactionId });
+  };
+};

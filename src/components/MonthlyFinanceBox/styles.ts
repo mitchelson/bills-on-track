@@ -7,11 +7,11 @@ export const Container = styled.View`
   height: auto;
   border-radius: 10px;
   align-items: center;
-  background-color: ${({ theme }) => theme.black};
+  background-color: ${({ theme }) => theme.grey_100};
 `;
 
 export const Box = styled.View`
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
 `;
 
@@ -28,7 +28,9 @@ export const Divider = styled.View`
 
 export const MonthText = styled.Text`
   color: ${({ theme }) => theme.title};
-  font-size: 18px;
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 10;
 `;
 
 export const ValueTitleText = styled.Text`
@@ -36,8 +38,12 @@ export const ValueTitleText = styled.Text`
   font-size: 18px;
 `;
 
-export const ValueText = styled.Text`
-  color: ${({ theme }) => theme.title};
+type ValueTextProps = {
+  type: "current" | "expenses" | "expected"
+}
+
+export const ValueText = styled.Text<ValueTextProps>`
+  color: ${({ theme, type }) => type === "expenses" ? theme.danger : type === "current" ? theme.greenColor : theme.blueColor};
   font-size: 28px;
   margin-top: 10px;
 `;
