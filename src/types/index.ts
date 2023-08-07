@@ -1,3 +1,5 @@
+import { DefaultTheme } from "styled-components";
+
 export interface User {
   id: string;
   email: string;
@@ -18,6 +20,7 @@ export type MonthlyFinanceProps = {
 
 export type IconsProps = {
   color?: string;
+  style?: DefaultTheme;
   name:
   | "link"
   | "search"

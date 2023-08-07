@@ -9,6 +9,7 @@ export const darkTheme = {
   grey100: "#888",
   black: "#000",
   white: "#fff",
+  greenColor: '#008440',
 
   grey300: "#333",
   grey200: "#222",

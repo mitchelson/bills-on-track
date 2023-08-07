@@ -1,14 +1,25 @@
 import styled from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
-  flex: 1;
+width: 100%;
+height: 100%;
+padding:16px;
 `;
 
 export const Content = styled.ScrollView`
   padding: 16px;
 `;
+export const Box = styled.View`
+`;
+export const General = styled.View`
+`;
+export const Security = styled.View`
+
+`;
+export const TextTitle = styled.Text``;
 
 export const TitlePage = styled.Text`
+padding: 0px 16px;
   font-size: 30px;
   font-weight: bold;
   color: ${({ theme }) => theme.title};
@@ -21,10 +32,9 @@ export const TextButton = styled.Text`
 `;
 
 export const Button = styled.TouchableOpacity`
-  height: 48px;
   align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   border-radius: 10px;
-  background-color: ${({ theme }) => theme.danger};
   margin: 16px;
 `;

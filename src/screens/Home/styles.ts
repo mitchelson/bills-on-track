@@ -1,5 +1,12 @@
+import { Platform } from "react-native";
 import styled from "styled-components/native";
 
+export const UserImage = styled.Image`
+width: 64px;
+height: 64px;
+border-radius: 32px;
+background: #fff;
+`;
 export const Container = styled.SafeAreaView`
   width: 100%;
   flex: 1;
@@ -50,7 +57,26 @@ export const BalanceCents = styled.Text`
   font-size: 30px;
   font-weight: normal;
 `;
-
+export const BalanceContainer = styled.View`
+  margin-top: 20px;
+  width: 100%;
+  background: #fff;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 8px;
+  ${Platform.select({
+  ios: {
+    shadowColor: '#ccc',
+    shadowOffset: '2px 4px',
+    shadowOpacity: '0.2',
+    shadowRadius: 15,
+  },
+  android: {
+    elevation: '20',
+  },
+})}
+flex-direction: row;
+`;
 export const Avatar = styled.Image`
   width: 60px;
   height: 60px;
@@ -60,8 +86,17 @@ export const Avatar = styled.Image`
 
 export const Row = styled.View`
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: row;
 `;
 
 export const Box = styled.View``;
+
+export const Notification = styled.TouchableOpacity`
+width: 48px;
+height: 48px;
+align-items: center;
+justify-content: center;
+border-radius: 8px;
+background-color: ${({ theme }) => theme.greenColor};
+`;

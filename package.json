@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@types/react-native": "^0.72.2",
     "@types/dinero.js": "^1.9.0",
     "@types/react": "~18.0.14",
     "@types/react-navigation": "^3.4.0",
