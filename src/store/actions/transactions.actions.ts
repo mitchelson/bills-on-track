@@ -19,3 +19,9 @@ export const deleteTransaction = (transactionId: string) => {
     dispatch({ type: keys.DELETE_TRANSACTION, payload: transactionId });
   };
 };
+
+export const setBalance = (balance: number) => {
+  return (dispatch: any) => {
+    dispatch({ type: keys.SET_BALANCE, payload: balance });
+  };
+}

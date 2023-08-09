@@ -9,6 +9,12 @@ export const initialState: InitialStateTransactions = {
 
 const transactions = (state = initialState, action: any) => {
   switch (action.type) {
+    case keys.SET_BALANCE: {
+      return {
+        ...state,
+        balance: action.payload
+      };
+    }
     case keys.CREATE_NEW_TRANSACTION: {
       return {
         ...state,

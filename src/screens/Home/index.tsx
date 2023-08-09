@@ -1,5 +1,9 @@
 import { Ionicons } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native";
+import { calcBalance } from "../../common";
+import Icons from "../../components/Icons";
 import MonthlyFinanceBox from "../../components/MonthlyFinanceBox";
+import NewTransactionButton from "../../components/NewTransactionButton";
 import * as S from "./styles";
 import { useHomeView } from "./viewModel";
 
@@ -12,6 +16,7 @@ const Home = () => {
     expected,
     expenses,
     loadTransactions,
+    editBalance,
   } = useHomeView();
 
   return (
@@ -30,14 +35,27 @@ const Home = () => {
           </S.Notification>
         </S.Row>
 
+        <S.BoxBalance>
+          <S.TitleBalance>Saldo atual</S.TitleBalance>
+          <S.Row>
+            <S.BoxMoney>
+              <S.BalanceCents>R$</S.BalanceCents>
+              <S.Balance>{calcBalance(balance).split("R$")[1]}</S.Balance>
+            </S.BoxMoney>
+            <TouchableOpacity onPress={editBalance}>
+              <Icons name="edit-3" />
+            </TouchableOpacity>
+          </S.Row>
+        </S.BoxBalance>
+
         <MonthlyFinanceBox
           expectedBalance={expected}
           monthlyExpenses={expenses}
           expectedRevenue={revenue}
           month={month}
         />
-        {/* <Button text="Botão" width={40} /> */}
       </S.Content>
+      <NewTransactionButton />
     </S.Container>
   );
 };

@@ -1,13 +1,14 @@
 import React from "react";
+import { TouchableOpacityProps } from "react-native";
 import * as S from "./styles";
 
-type ButtonProps = {
+interface ButtonProps extends TouchableOpacityProps {
   loading?: boolean;
   type?: "primary" | "secondary" | "outline";
   text: string;
   disabled?: boolean;
   width?: number;
-};
+}
 
 const Button: React.FC<ButtonProps> = (props) => {
   return (

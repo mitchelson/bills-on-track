@@ -13,7 +13,6 @@ export const Container = styled.TouchableOpacity<ButtonProps>`
   height: 48px;
   border-radius: 8px;
 
-  flex: 1;
   align-items: center;
   justify-content: center;
 
@@ -44,8 +43,8 @@ export const Text = styled.Text<ButtonProps>`
         ? theme.textButtonDisabled
         : theme.textButtonOutlineDisabled
       : type && type === "outline"
-        ? theme.white
-        : theme.grey200};
+        ? theme.primaryButton
+        : theme.white};
 `;
 
 export const ActivityIndicator = styled.ActivityIndicator.attrs(

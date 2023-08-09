@@ -4,6 +4,7 @@ import {
   MaterialIcons,
 } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import Icons from "../components/Icons";
 import Home from "../screens/Home";
@@ -75,7 +76,7 @@ const AppRoutes = () => {
         name="Report"
         component={Report}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         options={{
           tabBarItemStyle: {
             backgroundColor: "#16C64F",
@@ -90,7 +91,7 @@ const AppRoutes = () => {
         }}
         name="NewTransaction"
         component={NewTransaction}
-      />
+      /> */}
 
       <Tab.Screen
         options={{
@@ -135,4 +136,22 @@ const AppRoutes = () => {
   );
 };
 
-export default AppRoutes;
+const Stack = createNativeStackNavigator();
+
+const StackRoutes = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{ headerShown: false }}
+      initialRouteName="Routes"
+    >
+      <Stack.Screen name="Routes" component={AppRoutes} />
+      <Stack.Screen
+        options={{ presentation: "modal" }}
+        name="NewTransaction"
+        component={NewTransaction}
+      />
+    </Stack.Navigator>
+  );
+};
+
+export default StackRoutes;

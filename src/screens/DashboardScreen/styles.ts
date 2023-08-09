@@ -1,4 +1,4 @@
-import { Platform } from "react-native";
+import { osName } from "expo-device";
 import { styled } from "styled-components/native";
 
 export const Container = styled.View`
@@ -61,17 +61,14 @@ export const BalanceContainer = styled.View`
   justify-content: space-around;
   align-items: center;
   border-radius: 8px;
-  ${Platform.select({
-  ios: {
-    shadowColor: '#ccc',
-    shadowOffset: '2px 4px',
-    shadowOpacity: '0.2',
-    shadowRadius: 15,
-  },
-  android: {
-    elevation: '20',
-  },
-})}
+  ${osName === "ios" ?
+    ` shadowColor: '#ccc',
+      shadowOffset: '2px 4px',
+      shadowOpacity: '0.2',
+      shadowRadius: 15`
+    :
+    `elevation: '20'`
+  }
 flex-direction: row;
 `;
 

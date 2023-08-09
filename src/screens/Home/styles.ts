@@ -1,12 +1,13 @@
-import { Platform } from "react-native";
+import { osName } from "expo-device";
 import styled from "styled-components/native";
 
 export const UserImage = styled.Image`
-width: 64px;
-height: 64px;
-border-radius: 32px;
-background: #fff;
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  background: #fff;
 `;
+
 export const Container = styled.SafeAreaView`
   width: 100%;
   flex: 1;
@@ -33,50 +34,47 @@ export const BoxBalance = styled.View`
   justify-content: center;
   padding: 20px;
   width: 100%;
+  flex: 1;
   padding: 20px;
-  border: 1px;
   border-radius: 10px;
-  border-color: ${({ theme }) => theme.grey100};
   margin-top: 20px;
-  background-color: ${({ theme }) => theme.black};
+  overflow: hidden;
+  background-color: ${({ theme }) => theme.grey_100};
 `;
 
 export const TitleBalance = styled.Text`
   color: ${({ theme }) => theme.title};
-  font-size: 16px;
+  font-size: 20px;
+  margin-bottom: 5px;
 `;
 
 export const Balance = styled.Text`
   color: ${({ theme }) => theme.title};
-  font-size: 50px;
   font-weight: bold;
+  font-size: 30px;
 `;
 
 export const BalanceCents = styled.Text`
   color: ${({ theme }) => theme.title};
   font-size: 30px;
-  font-weight: normal;
 `;
+
 export const BalanceContainer = styled.View`
   margin-top: 20px;
   width: 100%;
   background: #fff;
-  justify-content: space-around;
-  align-items: center;
   border-radius: 8px;
-  ${Platform.select({
-  ios: {
-    shadowColor: '#ccc',
-    shadowOffset: '2px 4px',
-    shadowOpacity: '0.2',
-    shadowRadius: 15,
-  },
-  android: {
-    elevation: '20',
-  },
-})}
-flex-direction: row;
+  ${osName === "ios" ?
+    ` shadowColor: '#ccc',
+      shadowOffset: '2px 4px',
+      shadowOpacity: '0.2',
+      shadowRadius: 15`
+    :
+    `elevation: '20'`
+  }
+  flex-direction: row;
 `;
+
 export const Avatar = styled.Image`
   width: 60px;
   height: 60px;
@@ -91,6 +89,11 @@ export const Row = styled.View`
 `;
 
 export const Box = styled.View``;
+
+export const BoxMoney = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
 
 export const Notification = styled.TouchableOpacity`
 width: 48px;
