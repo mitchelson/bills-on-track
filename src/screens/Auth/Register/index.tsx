@@ -1,100 +1,43 @@
-import { useNavigation } from "@react-navigation/native";
-import * as AuthGoogle from "expo-auth-session";
-import * as Google from "expo-auth-session/providers/google";
-import React, { useEffect } from "react";
-import { Image } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
-import { imageLoginScreen } from "../../../assets";
-import IconGoogle from "../../../assets/icons/google.png";
-import { logIn, logOf } from "../../../store/actions/user.actions";
+import React from "react";
+import Button from "../../../components/Button";
+import Icons from "../../../components/Icons";
+import InputForm from "../../../components/InputForm";
+import { RegisterScreenProps } from "../../../types/navigation";
 import * as S from "./styles";
 
-const Register = () => {
-  AuthGoogle.AuthRequest;
-  const dispatch = useDispatch();
-  const isLogged = useSelector((state) => state.user.isLogged);
-  const [request, response, promptAsync] = Google.useAuthRequest({
-    androidClientId:
-      "981331326290-jagqia50991ib7q6k71u7lm1p4ghccc6.apps.googleusercontent.com",
-    iosClientId:
-      "981331326290-8ojibkijikulchgj81ngip587me4shh2.apps.googleusercontent.com",
-  });
-
-  const getUserInfo = async (token: string) => {
-    if (!token) return;
-    try {
-      const response = await fetch(
-        "https://www.googleapis.com/userinfo/v2/me",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        },
-      );
-
-      const user = await response.json();
-      dispatch(logIn(user));
-    } catch (err) {}
-  };
-
-  const handleSingInWithGoogle = async () => {
-    if (!isLogged) {
-      if (
-        response?.type === "success" &&
-        response.authentication?.accessToken
-      ) {
-        await getUserInfo(response.authentication?.accessToken);
-      } else {
-        dispatch(logOf());
-      }
-    }
-  };
-
-  const { navigate } = useNavigation();
-
+const Register = ({ navigation }: RegisterScreenProps) => {
   const handleTerms = () => {
-    navigate("TermsOfUse" as never);
+    navigation.navigate("TermsOfUse");
   };
 
-  useEffect(() => {
-    handleSingInWithGoogle();
-  }, [response]);
+  const handleLogin = () => {
+    navigation.navigate("Login");
+  };
+
+  const handleBack = () => {
+    navigation.goBack();
+  };
 
   return (
     <S.Container>
       <S.Content>
+        <S.BackButton onPress={handleBack}>
+          <Icons name="arrow-left" />
+        </S.BackButton>
         <S.Box>
-          <S.ImageWomen
-            resizeMethod="resize"
-            resizeMode="stretch"
-            source={imageLoginScreen}
-          />
-          <S.Title>{`Controle financeiro na palma da sua mão!`}</S.Title>
-          <S.Text>{`Vamos ajudá-lo a tomar o controle de suas finanças de maneira simples e intuitiva.`}</S.Text>
+          <S.Title>{`É novo aqui? Vamos criar sua conta.`}</S.Title>
+          <S.Text>{`É simples, basta adicionar seu nome, email e definir uma senha. Afinal, o objetivo é simplificar não é?`}</S.Text>
         </S.Box>
         <S.Box>
-          <S.Button onPress={() => promptAsync()}>
-            <Image
-              resizeMethod="resize"
-              resizeMode="contain"
-              style={{
-                height: 30,
-              }}
-              source={IconGoogle}
-            />
-            <S.TextButton>Continuar com Google</S.TextButton>
-          </S.Button>
-          <S.TermText>
-            Ao continuar, estou de acordo com os{" "}
-            <S.UnderlineTermText onPress={handleTerms}>
-              Termos de Uso
-            </S.UnderlineTermText>{" "}
-            e com o{" "}
-            <S.UnderlineTermText onPress={handleTerms}>
-              Aviso de Privacidade.
-            </S.UnderlineTermText>
-          </S.TermText>
+          <InputForm label="Nome e Sobrenome" placeholder="Fulano da Silva" />
+          <InputForm label="E-mail" placeholder="fulano@email.com" />
+          <InputForm label="Senha" placeholder="********" />
         </S.Box>
+        <Button text="Criar e entrar" />
+        <S.TermText>ou</S.TermText>
+        <S.UnderlineTermText onPress={handleLogin}>
+          Entrar com minha conta
+        </S.UnderlineTermText>
       </S.Content>
     </S.Container>
   );

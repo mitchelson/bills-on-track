@@ -54,6 +54,10 @@ export const useLogin = () => {
     } catch (err) {}
   };
 
+  const loginWithGitHub = async () => {
+    // https://bills-on-track.firebaseapp.com/__/auth/handler
+  };
+
   const handleSingInWithGoogle = async () => {
     if (!isLogged) {
       setLoading(true);
@@ -78,5 +82,6 @@ export const useLogin = () => {
     signIn,
     promptAsync,
     loading,
+    loginWithGitHub,
   };
 };

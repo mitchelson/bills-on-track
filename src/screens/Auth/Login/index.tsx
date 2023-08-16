@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ActivityIndicator, Image } from "react-native";
 import { LogoIcon } from "../../../assets";
 import IconGoogle from "../../../assets/icons/google.png";
+import GitHubIcon from "../../../assets/image/github-mark.png";
 import Button from "../../../components/Button";
 import InputForm from "../../../components/InputForm";
 import { LoginScreenProps } from "../../../types/navigation";
@@ -9,7 +10,7 @@ import * as S from "./styles";
 import { useLogin } from "./viewModel";
 
 const Login = ({ navigation }: LoginScreenProps) => {
-  const { promptAsync, signIn, loading } = useLogin();
+  const { promptAsync, signIn, loading, loginWithGitHub } = useLogin();
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
@@ -26,6 +27,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
       <S.Content>
         <S.Box>
           <LogoIcon width={60} height={60} />
+
           <S.Title>{`Bem vindo de volta!`}</S.Title>
           <S.Text>{`Acesse a sua conta e comece a transformar as suas finanças.`}</S.Text>
         </S.Box>
@@ -55,11 +57,11 @@ const Login = ({ navigation }: LoginScreenProps) => {
         <S.TermText>ou</S.TermText>
 
         <S.Box>
-          <S.Button onPress={() => promptAsync()}>
-            {loading ? (
-              <ActivityIndicator />
-            ) : (
-              <>
+          <S.BoxRow>
+            <S.Button onPress={() => promptAsync()}>
+              {loading ? (
+                <ActivityIndicator />
+              ) : (
                 <Image
                   resizeMethod="resize"
                   resizeMode="contain"
@@ -68,10 +70,24 @@ const Login = ({ navigation }: LoginScreenProps) => {
                   }}
                   source={IconGoogle}
                 />
-                <S.TextButton>Continuar com Google</S.TextButton>
-              </>
-            )}
-          </S.Button>
+              )}
+            </S.Button>
+            <S.Button onPress={() => loginWithGitHub()}>
+              {loading ? (
+                <ActivityIndicator />
+              ) : (
+                <Image
+                  resizeMethod="resize"
+                  resizeMode="contain"
+                  style={{
+                    height: 30,
+                  }}
+                  source={GitHubIcon}
+                />
+              )}
+            </S.Button>
+          </S.BoxRow>
+
           <S.TermText>
             Ao continuar, estou de acordo com os{" "}
             <S.UnderlineTermText onPress={handleTerms}>

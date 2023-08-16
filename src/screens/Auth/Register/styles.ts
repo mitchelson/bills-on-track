@@ -11,8 +11,17 @@ export const Content = styled.ScrollView`
   padding: 20px;
 `;
 
+export const BackButton = styled.TouchableOpacity`
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+`
+
 export const Box = styled.View`
   width: 100%;
+  margin-bottom: 10px;
 `;
 
 export const ImageWomen = styled.Image`
@@ -35,7 +44,7 @@ export const Text = styled.Text`
   color: ${({ theme }) => theme.title};
   font-size: 20px;
   text-align: center;
-  margin: 20px;
+  font-weight: 300;
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -55,14 +64,16 @@ export const TermText = styled.Text`
   color: ${({ theme }) => theme.title};
   font-size: 15px;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 100px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 `;
 
 export const UnderlineTermText = styled.Text`
-  color: ${({ theme }) => theme.title};
+  color: ${({ theme }) => theme.primary};
   font-size: 15px;
-  text-decoration: underline;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
 `;
 
 export const TextButton = styled.Text`

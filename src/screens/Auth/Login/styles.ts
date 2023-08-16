@@ -16,6 +16,13 @@ export const Box = styled.View`
   align-items: center;
 `;
 
+export const BoxRow = styled.View`
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const BoxLeft = styled.View`
   width: 100%;
 `;
@@ -52,13 +59,11 @@ export const Text = styled.Text`
 `;
 
 export const Button = styled.TouchableOpacity`
-  width: 100%;
+  width: 48px;
   height: 48px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  border-radius: 10px;
+  margin: 10px 10px;
+  border-radius: 24px;
   align-items: center;
-  flex-direction: row;
   justify-content: center;
   border-width: 1px;
   border-color: ${({ theme }) => theme.grey_100};
