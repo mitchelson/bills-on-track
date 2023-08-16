@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "460360925",
+    "project_id": "bills-on-track",
+    "storage_bucket": "bills-on-track.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460360925:android:8aa19d2567288dc6d25f34",
+        "android_client_info": {
+          "package_name": "com.mdev.billsontrack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460360925-84lhj1jqf58oic8oiphlgc4tbh9ph9qj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mdev.billsontrack",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "460360925-nsub4o2k44uhj6okm9q2f67c24qvrnlg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqjeGyBX4_SC9qm3HSzzURGxIuesKSWXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460360925-nsub4o2k44uhj6okm9q2f67c24qvrnlg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "460360925-ajufllo9vj5a1kbagoev34jv1mq0glh6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mdev.billsontrack"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

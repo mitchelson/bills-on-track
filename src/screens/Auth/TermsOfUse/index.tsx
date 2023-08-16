@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import Icons from "../../components/Icons";
+import Icons from "../../../components/Icons";
 import * as S from "./styles";
 
 const TermsOfUse: React.FC = () => {

@@ -7,12 +7,8 @@ export const Container = styled.SafeAreaView`
   background-color: ${({ theme }) => theme.background};
 `;
 
-export const Content = styled.View`
-  width: 100%;
-  flex: 1;
+export const Content = styled.ScrollView`
   padding: 20px;
-  align-items: center;
-  justify-content: space-between;
 `;
 
 export const Box = styled.View`
@@ -60,6 +56,7 @@ export const TermText = styled.Text`
   font-size: 15px;
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 100px;
 `;
 
 export const UnderlineTermText = styled.Text`

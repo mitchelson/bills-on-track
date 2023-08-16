@@ -1,14 +1,16 @@
 import { useNavigation } from "@react-navigation/native";
+import * as AuthGoogle from "expo-auth-session";
 import * as Google from "expo-auth-session/providers/google";
 import React, { useEffect } from "react";
 import { Image } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { imageLoginScreen } from "../../assets";
+import { imageLoginScreen } from "../../../assets";
+import { logIn, logOf } from "../../../store/actions/user.actions";
 import IconGoogle from "../../assets/icons/google.png";
-import { logIn, logOf } from "../../store/actions/user.actions";
 import * as S from "./styles";
 
-const Auth = () => {
+const Register = () => {
+  AuthGoogle.AuthRequest;
   const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.user.isLogged);
   const [request, response, promptAsync] = Google.useAuthRequest({
@@ -98,4 +100,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default Register;
