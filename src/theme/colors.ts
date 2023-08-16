@@ -13,6 +13,8 @@ export const darkTheme = {
   blueColor: '#6495ED',
 
   grey_100: "#eee",
+  grey_200: "#ddd",
+  grey_300: "#ccc",
   grey300: "#333",
   grey200: "#222",
 

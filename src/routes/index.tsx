@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BOTTOM_SHEET_OPTIONS, bottomSheets } from "../components/BottomSheets";
 import { WrapWithBottomSheet } from "../components/BottomSheets/BottomSheet";
 import StackRoutes from "./app.route";
@@ -9,7 +9,8 @@ import AuthRoutes from "./auth.route";
 const Stack = createNativeStackNavigator();
 
 const Routes = () => {
-  const isLogged = useSelector((state) => state.user.isLogged);
+  const dispatch = useDispatch();
+  const { isLogged } = useSelector((state) => state.user);
 
   return (
     <Stack.Navigator
@@ -18,7 +19,7 @@ const Routes = () => {
       }}
     >
       {isLogged ? (
-        <Stack.Screen name="Routes" component={StackRoutes} />
+        <Stack.Screen name="AppRoutes" component={StackRoutes} />
       ) : (
         <Stack.Screen name="AuthRoutes" component={AuthRoutes} />
       )}

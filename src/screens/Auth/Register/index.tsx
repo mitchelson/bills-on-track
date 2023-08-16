@@ -5,8 +5,8 @@ import React, { useEffect } from "react";
 import { Image } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { imageLoginScreen } from "../../../assets";
+import IconGoogle from "../../../assets/icons/google.png";
 import { logIn, logOf } from "../../../store/actions/user.actions";
-import IconGoogle from "../../assets/icons/google.png";
 import * as S from "./styles";
 
 const Register = () => {

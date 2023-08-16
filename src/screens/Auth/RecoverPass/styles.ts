@@ -18,6 +18,8 @@ export const Box = styled.View`
 
 export const BoxLeft = styled.View`
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 `;
 
 export const ImageWomen = styled.Image`
@@ -70,12 +72,14 @@ export const TermText = styled.Text`
   font-size: 15px;
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 export const UnderlineTermText = styled.Text`
   color: ${({ theme }) => theme.primary};
   font-size: 15px;
   text-decoration: underline;
+  text-align: center;
   text-decoration-color: ${({ theme }) => theme.primary};
 `;
 

@@ -30,7 +30,7 @@ export const MonthText = styled.Text`
   color: ${({ theme }) => theme.title};
   font-size: 25px;
   font-weight: 500;
-  margin-top: 10;
+  margin-top: 10px;
 `;
 
 export const ValueTitleText = styled.Text`

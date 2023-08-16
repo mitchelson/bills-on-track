@@ -21,6 +21,6 @@ export const Container = styled.TouchableOpacity`
       shadowOpacity: '0.2',
       shadowRadius: 15`
     :
-    `elevation: '20'`
+    `elevation: 20`
   }
 `;

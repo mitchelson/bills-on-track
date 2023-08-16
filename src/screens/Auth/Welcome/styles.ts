@@ -25,7 +25,7 @@ export const ImageWomen = styled.Image`
 
 export const Title = styled.Text`
   color: ${({ theme }) => theme.title};
-  font-size: 36px;
+  font-size: 30px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 10px;
@@ -33,9 +33,10 @@ export const Title = styled.Text`
 
 export const Text = styled.Text`
   color: ${({ theme }) => theme.title};
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   margin: 20px;
+  font-weight: 200;
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -59,10 +60,10 @@ export const TermText = styled.Text`
   margin-bottom: 100px;
 `;
 
-export const UnderlineTermText = styled.Text`
-  color: ${({ theme }) => theme.title};
+export const LinkToRegister = styled.Text`
+  color: ${({ theme }) => theme.primary};
   font-size: 15px;
-  text-decoration: underline;
+  font-weight: 400;
 `;
 
 export const TextButton = styled.Text`
