@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { ActivityIndicator, Image } from "react-native";
 import { LogoIcon } from "../../../assets";
 import IconGoogle from "../../../assets/icons/google.png";
-import GitHubIcon from "../../../assets/image/github-mark.png";
 import Button from "../../../components/Button";
 import InputForm from "../../../components/InputForm";
 import { LoginScreenProps } from "../../../types/navigation";
@@ -72,7 +71,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
                 />
               )}
             </S.Button>
-            <S.Button onPress={() => loginWithGitHub()}>
+            {/* <S.Button onPress={() => loginWithGitHub()}>
               {loading ? (
                 <ActivityIndicator />
               ) : (
@@ -85,7 +84,7 @@ const Login = ({ navigation }: LoginScreenProps) => {
                   source={GitHubIcon}
                 />
               )}
-            </S.Button>
+            </S.Button> */}
           </S.BoxRow>
 
           <S.TermText>

@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.View`
   flex: 1;
 `;
 
@@ -9,7 +9,8 @@ export const Content = styled.ScrollView`
 `;
 
 export const TitlePage = styled.Text`
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 300;
   color: ${({ theme }) => theme.title};
+  text-align: center;
 `;
