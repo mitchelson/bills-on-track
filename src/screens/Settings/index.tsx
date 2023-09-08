@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Ionicons } from "@expo/vector-icons";
+import { ArrowLeftIcon, ArrowRightIcon } from "react-native-heroicons/solid";
 import { useDispatch } from "react-redux";
-import Icons from "../../components/Icons";
 import { logOf } from "../../store/actions/user.actions";
 import * as S from "./styles";
 
@@ -29,20 +29,16 @@ const Settings = () => {
               </S.BoxIcons>
               <S.TextTitle>Tema</S.TextTitle>
             </S.Row>
-            <Icons name="arrow-right" />
+            <ArrowLeftIcon />
           </S.Button>
           <S.Button>
             <S.Row>
               <S.BoxIcons>
-                <Icons
-                  name="arrow-down-circle"
-                  color="white"
-                  style={{ padding: 4 }}
-                />
+                <ArrowLeftIcon />
               </S.BoxIcons>
               <S.TextTitle>Ordem dos lançamentos</S.TextTitle>
             </S.Row>
-            <Icons name="arrow-right" />
+            <ArrowRightIcon />
           </S.Button>
         </S.General>
 

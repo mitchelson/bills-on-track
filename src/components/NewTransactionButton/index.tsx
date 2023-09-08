@@ -1,17 +1,17 @@
 import React from "react";
 
 import { useNavigation } from "@react-navigation/native";
-import Icons from "../Icons";
+import { PlusIcon } from "react-native-heroicons/solid";
 import * as S from "./styles";
 
 const NewTransactionButton: React.FC = () => {
   const { navigate } = useNavigation();
   const onPress = () => {
-    navigate("NewTransaction");
+    navigate("NewTransaction" as never);
   };
   return (
     <S.Container onPress={onPress}>
-      <Icons name="plus" color="#fff" />
+      <PlusIcon />
     </S.Container>
   );
 };

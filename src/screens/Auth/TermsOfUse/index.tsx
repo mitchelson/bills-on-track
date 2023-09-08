@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import Icons from "../../../components/Icons";
+import { ArrowLeftIcon } from "react-native-heroicons/solid";
 import * as S from "./styles";
 
 const TermsOfUse: React.FC = () => {
@@ -9,7 +9,7 @@ const TermsOfUse: React.FC = () => {
     <S.Container>
       <S.Content>
         <S.BackButton onPress={goBack}>
-          <Icons name="arrow-left" />
+          <ArrowLeftIcon />
         </S.BackButton>
         <S.Title>Termos de Uso e Aviso de Privacidade</S.Title>
         <S.Description>

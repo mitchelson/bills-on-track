@@ -7,6 +7,11 @@ export type HomeScreenProps = NativeStackScreenProps<
   'HomeScreen'
 >;
 
+export type NewTransactionProps = NativeStackScreenProps<
+  NewTransactionParamList,
+  'NewTransaction'
+>;
+
 export type AppTabParamList = {
   HomeScreen: HomeScreenProps;
   NewTransaction: undefined;

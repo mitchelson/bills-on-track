@@ -1,6 +1,6 @@
 import React from "react";
+import { ArrowLeftIcon } from "react-native-heroicons/solid";
 import Button from "../../../components/Button";
-import Icons from "../../../components/Icons";
 import InputForm from "../../../components/InputForm";
 import { RegisterScreenProps } from "../../../types/navigation";
 import * as S from "./styles";
@@ -22,7 +22,7 @@ const Register = ({ navigation }: RegisterScreenProps) => {
     <S.Container>
       <S.Content>
         <S.BackButton onPress={handleBack}>
-          <Icons name="arrow-left" />
+          <ArrowLeftIcon />
         </S.BackButton>
         <S.Box>
           <S.Title>{`É novo aqui? Vamos criar sua conta.`}</S.Title>

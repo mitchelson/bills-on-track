@@ -14,18 +14,6 @@ export const HeaderNewTransaction: React.FC<HeaderNewTransactionProps> = ({
   return (
     <S.Container>
       <S.TypeBox
-        onPress={() => onPress("income")}
-        type={"income"}
-        activeType={transactionType}
-      >
-        <ArrowTrendingDownIcon
-          color={transactionType === "income" ? darkTheme.green_500 : "gray"}
-        />
-        <S.TypeText type={"income"} activeType={transactionType}>
-          Receita
-        </S.TypeText>
-      </S.TypeBox>
-      <S.TypeBox
         onPress={() => onPress("outcome")}
         type={"outcome"}
         activeType={transactionType}
@@ -35,6 +23,18 @@ export const HeaderNewTransaction: React.FC<HeaderNewTransactionProps> = ({
         />
         <S.TypeText type={"outcome"} activeType={transactionType}>
           Despesa
+        </S.TypeText>
+      </S.TypeBox>
+      <S.TypeBox
+        onPress={() => onPress("income")}
+        type={"income"}
+        activeType={transactionType}
+      >
+        <ArrowTrendingDownIcon
+          color={transactionType === "income" ? darkTheme.green_500 : "gray"}
+        />
+        <S.TypeText type={"income"} activeType={transactionType}>
+          Receita
         </S.TypeText>
       </S.TypeBox>
     </S.Container>

@@ -6,10 +6,12 @@ import {
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
-import Icons from "../components/Icons";
+import { Bars3CenterLeftIcon } from "react-native-heroicons/solid";
 import Home from "../screens/Home";
 import Report from "../screens/Report";
 import Settings from "../screens/Settings";
+import AccountSelector from "../screens/Transactions/AccountSelector";
+import CategorySelector from "../screens/Transactions/CategorySelector";
 import NewTransaction from "../screens/Transactions/NewTransaction";
 import { darkTheme } from "../theme/colors";
 
@@ -102,7 +104,7 @@ const AppRoutes = () => {
             height: 40,
           },
           tabBarIcon: ({ focused, color }) => (
-            <Icons name="bar-chart-2" color={focused ? color : "black"} />
+            <Bars3CenterLeftIcon color={focused ? color : "black"} />
           ),
         }}
         name="Sync"
@@ -149,6 +151,16 @@ const StackRoutes = () => {
         options={{ presentation: "modal" }}
         name="NewTransaction"
         component={NewTransaction}
+      />
+      <Stack.Screen
+        options={{ presentation: "modal" }}
+        name="AccountSelector"
+        component={AccountSelector}
+      />
+      <Stack.Screen
+        options={{ presentation: "modal" }}
+        name="CategorySelector"
+        component={CategorySelector}
       />
     </Stack.Navigator>
   );

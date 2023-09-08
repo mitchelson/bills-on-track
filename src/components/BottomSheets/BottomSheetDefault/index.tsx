@@ -1,6 +1,6 @@
 import BottomSheet, { BottomSheetProps } from "@gorhom/bottom-sheet";
 import React, { memo, useRef } from "react";
-import Icons from "../../Icons";
+import { XMarkIcon } from "react-native-heroicons/solid";
 import * as S from "./style";
 
 const BottomSheetContainer = ({
@@ -21,7 +21,7 @@ const BottomSheetContainer = ({
       {...props}
     >
       <S.DeleteTouchable onPress={handleClosePress}>
-        <Icons name="x" />
+        <XMarkIcon />
       </S.DeleteTouchable>
       {children}
     </S.PackageBottomSheet>

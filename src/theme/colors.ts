@@ -2,7 +2,8 @@ export const darkTheme = {
   primary: "#28B473",
   background: "#fff",
 
-  title: "#333",
+  title: "#212121",
+  text_300: "#616161",
   text: "#fff",
 
   red_500: "#F44236",
@@ -21,9 +22,11 @@ export const darkTheme = {
   grey300: "#333",
   grey200: "#222",
 
+  grey_500: "#9E9E9E",
+
   danger: "#A33",
 
-  primaryButton: "#28B473",
+  primaryButton: "#16C64F",
   secondaryButton: "#fff",
   buttonDisabled: "#ababab",
 

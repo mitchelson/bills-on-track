@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
+import { PencilIcon } from "react-native-heroicons/solid";
 import { calcBalance } from "../../common";
-import Icons from "../../components/Icons";
 import MonthlyFinanceBox from "../../components/MonthlyFinanceBox";
 import NewTransactionButton from "../../components/NewTransactionButton";
 import * as S from "./styles";
@@ -43,7 +43,7 @@ const Home = () => {
               <S.Balance>{calcBalance(balance).split("R$")[1]}</S.Balance>
             </S.BoxMoney>
             <TouchableOpacity onPress={editBalance}>
-              <Icons name="edit-3" />
+              <PencilIcon />
             </TouchableOpacity>
           </S.Row>
         </S.BoxBalance>
