@@ -13,3 +13,8 @@ export const TitlePage = styled.Text`
   font-weight: bold;
   color: ${({ theme }) => theme.title};
 `;
+
+export const Text = styled.Text`
+  font-size: 15px;
+  color: ${({ theme }) => theme.title};
+`;

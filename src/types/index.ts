@@ -316,13 +316,14 @@ export type BillDTO = {
   value: number; // valor da transação em centavos
   description?: string; // descrição
   categoryId: string; // categoria
-  isRecurringPayment: boolean; // caso seja um pagamento recorrente
-  frequencyInterval: string; // frequencia do pagamento recorrente
-  installments: number; // quantidade de parcelas do pagamento recorrente
+  isRecurringPayment?: boolean | null; // caso seja um pagamento recorrente
+  frequencyInterval?: string; // frequencia do pagamento recorrente
+  installments?: number; // quantidade de parcelas do pagamento recorrente
   paymentDate: string; // data de efetivação da transação
-  status: string; // status da transação
+  status?: string; // status da transação
   createdAt: string; // data da criação do transação
-  updatedAt: string; // data da atualização da transação
+  updatedAt?: string; // data da atualização da transação
+  monthTransaction: string;
 };
 
 export type StateTransactions = {

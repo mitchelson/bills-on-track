@@ -1,6 +1,10 @@
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 import { CategoriesList } from "../../../components/CategoryIcons/type";
+import { createNewTransaction } from "../../../store/actions/transactions.actions";
+import { BillDTO } from "../../../types";
 import { NewTransactionProps } from "../../../types/navigation";
 
 export const useNewTransaction = ({
@@ -18,6 +22,9 @@ export const useNewTransaction = ({
   const [fixedOrInstallTransaction, setFixedOrInstallTransaction] = useState<
     "fixed" | "installments" | null
   >(null);
+
+  const dispatch = useDispatch();
+
   const [installmentTransaction, setInstallmentTransaction] = useState(false);
   const [amountOfTransactions, setAmountOfTransactions] = useState(false);
 
@@ -65,6 +72,28 @@ export const useNewTransaction = ({
     setOpen(false);
   };
 
+  const handleAddTransaction = () => {
+    const id = uuidv4();
+    const transaction = {
+      id,
+      createdAt: dayjs().format("YYYY-MM-DD"),
+      categoryId: category,
+      paymentDate: dayjs(transactionDate).format("YYYY-MM-DD"),
+      name: transactionName,
+      value: transactionAmount,
+      type: transactionType,
+      description: "",
+      status: "",
+      isRecurringPayment: false,
+      monthTransaction: dayjs(transactionDate).format("YYYY-MM"),
+    } as BillDTO;
+
+    console.log("transaction => ", transaction);
+
+    dispatch(createNewTransaction(transaction));
+    navigation.goBack();
+  };
+
   useEffect(() => {
     if (route.params?.category) setCategory(route.params.category);
   }, [route]);
@@ -97,5 +126,6 @@ export const useNewTransaction = ({
     viewDate,
     transactionDate,
     handleSetDate,
+    handleAddTransaction,
   };
 };

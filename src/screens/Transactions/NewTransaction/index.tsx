@@ -31,6 +31,7 @@ const NewTransaction = (props: NewTransactionProps) => {
     transactionDate,
     fixedOrInstallTransaction,
     handleFixedOrInstallTransaction,
+    handleAddTransaction,
   } = useNewTransaction(props);
 
   return (
@@ -94,7 +95,7 @@ const NewTransaction = (props: NewTransactionProps) => {
             </S.LoopText>
           </S.BoxLoopTransaction>
         </S.BoxLoop>
-        <Button text="Adicionar" />
+        <Button onPress={handleAddTransaction} text="Adicionar" />
       </S.Content>
       <DatePicker
         modal

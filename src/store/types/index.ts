@@ -1,6 +1,10 @@
 import { BillDTO } from "../../types";
 
 export interface InitialStateTransactions {
-  transactions: { [x: string]: BillDTO };
+  monthTransactions: {
+    [x: string]: {
+      [x: string]: BillDTO
+    }
+  };
   balance: number;
 }
