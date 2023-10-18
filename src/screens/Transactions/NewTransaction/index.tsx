@@ -95,7 +95,11 @@ const NewTransaction = (props: NewTransactionProps) => {
             </S.LoopText>
           </S.BoxLoopTransaction>
         </S.BoxLoop>
-        <Button onPress={handleAddTransaction} text="Adicionar" />
+        <Button
+          disabled={transactionName.length === 0 || transactionAmount === 0}
+          onPress={handleAddTransaction}
+          text="Adicionar"
+        />
       </S.Content>
       <DatePicker
         modal
