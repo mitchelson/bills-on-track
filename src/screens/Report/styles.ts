@@ -5,7 +5,7 @@ export const Container = styled.SafeAreaView`
   background-color: ${({ theme }) => theme.green_500};
 `;
 
-export const FlatList = styled.FlatList`
+export const SectionList = styled.SectionList`
   background-color: ${({ theme }) => theme.white};
   margin-top: -30px;
   padding: 50px 16px 0px 16px;
@@ -39,6 +39,16 @@ export const YearReport = styled.Text`
   color: ${({ theme }) => theme.white};
 `;
 
+export const BoxDayTransaction = styled.View`
+  height: 30px;
+  border-radius: 25px;
+  width: 140px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  background-color: ${({ theme }) => theme.grey_100};
+`;
+
 export const TotalOutcome = styled.Text`
   font-size: 25px;
   font-weight: bold;
@@ -46,8 +56,13 @@ export const TotalOutcome = styled.Text`
   color: ${({ theme }) => theme.white};
 `;
 
+export const Empty = styled.Text`
+  font-size: 20px;
+  text-align: center;
+  color: ${({ theme }) => theme.grey_600};
+`;
 
 export const Text = styled.Text`
   font-size: 15px;
-  color: ${({ theme }) => theme.title};
+  color: ${({ theme }) => theme.grey_600};
 `;

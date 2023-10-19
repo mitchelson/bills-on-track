@@ -88,8 +88,6 @@ export const useNewTransaction = ({
       monthTransaction: dayjs(transactionDate).format("YYYY-MM"),
     } as BillDTO;
 
-    console.log("transaction => ", transaction);
-
     dispatch(createNewTransaction(transaction));
     navigation.goBack();
   };

@@ -20,6 +20,12 @@ export const deleteTransaction = (transactionId: string) => {
   };
 };
 
+export const deleteAllTransaction = () => {
+  return (dispatch: any) => {
+    dispatch({ type: keys.DELETE_ALL_TRANSACTION, payload: null });
+  };
+};
+
 export const setBalance = (balance: number) => {
   return (dispatch: any) => {
     dispatch({ type: keys.SET_BALANCE, payload: balance });

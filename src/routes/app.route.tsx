@@ -12,6 +12,7 @@ import Report from "../screens/Report";
 import Settings from "../screens/Settings";
 import AccountSelector from "../screens/Transactions/AccountSelector";
 import CategorySelector from "../screens/Transactions/CategorySelector";
+import DetailsTransactions from "../screens/Transactions/DetailsTransactions";
 import NewTransaction from "../screens/Transactions/NewTransaction";
 import { darkTheme } from "../theme/colors";
 
@@ -47,8 +48,6 @@ const AppRoutes = () => {
             height: 40,
           },
           tabBarIcon: ({ focused, color }) => (
-            // <Icons name="home" color={focused ? color : darkTheme.grey100} />
-            // <FontAwesome5 name="home" size={24} color="black" />
             <Entypo name="home" size={24} color={focused ? color : "black"} />
           ),
         }}
@@ -65,9 +64,6 @@ const AppRoutes = () => {
             height: 40,
           },
           tabBarIcon: ({ focused, color }) => (
-            // <Icons name="home" color={focused ? color : darkTheme.grey100} />
-            // <FontAwesome5 name="home" size={24} color="black" />
-            // <Entypo name="home" size={24} color="black" />
             <MaterialIcons
               name="sync-alt"
               size={24}
@@ -78,22 +74,6 @@ const AppRoutes = () => {
         name="Report"
         component={Report}
       />
-      {/* <Tab.Screen
-        options={{
-          tabBarItemStyle: {
-            backgroundColor: "#16C64F",
-            borderRadius: 8,
-            marginTop: 10,
-            width: 62,
-            height: 40,
-          },
-          tabBarIcon: ({ focused, color }) => (
-            <MaterialIcons name="add" size={24} color="white" />
-          ),
-        }}
-        name="NewTransaction"
-        component={NewTransaction}
-      /> */}
 
       <Tab.Screen
         options={{
@@ -125,10 +105,6 @@ const AppRoutes = () => {
               size={24}
               color={focused ? color : "black"}
             />
-            // <Icons
-            //   name="user-"
-            //   color={focused ? color : darkTheme.grey100}
-            // />
           ),
         }}
         name="Settings"
@@ -151,6 +127,11 @@ const StackRoutes = () => {
         options={{ presentation: "modal" }}
         name="NewTransaction"
         component={NewTransaction}
+      />
+      <Stack.Screen
+        options={{ presentation: "modal" }}
+        name="DetailsTransaction"
+        component={DetailsTransactions}
       />
       <Stack.Screen
         options={{ presentation: "modal" }}

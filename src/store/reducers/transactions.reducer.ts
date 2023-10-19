@@ -5,7 +5,7 @@ import { InitialStateTransactions } from "../types";
 
 export const initialState: InitialStateTransactions = {
   balance: 0,
-  monthTransactions: {}
+  allTransactions: {}
 };
 
 const transactions = (state = initialState, action: any) => {
@@ -18,29 +18,33 @@ const transactions = (state = initialState, action: any) => {
     }
     case keys.CREATE_NEW_TRANSACTION: {
       const actionTransaction = action.payload as BillDTO;
-      const newObj = {
+      return {
         ...state,
-        monthTransactions: {
-          ...state.monthTransactions,
-          [action.payload.monthTransaction]: {
-            ...state.monthTransactions[actionTransaction.monthTransaction],
-            [actionTransaction.id]: { ...actionTransaction }
+        allTransactions: {
+          ...(state.allTransactions || {}),
+          [actionTransaction.monthTransaction]: {
+            ...(state.allTransactions[actionTransaction.monthTransaction] || {}),
+            [actionTransaction.paymentDate]: {
+              ...(state?.allTransactions[actionTransaction.monthTransaction] ? state?.allTransactions[actionTransaction.monthTransaction][actionTransaction.paymentDate] || {} : {}),
+              [actionTransaction.id]: { ...actionTransaction }
+            }
           }
         }
-      };
-      console.log("newObj => ", newObj)
-      return newObj;
+      } as InitialStateTransactions;
     }
     case keys.DELETE_TRANSACTION: {
-      const newTransactions = state.monthTransactions;
+      const newTransactions = state.allTransactions;
       delete newTransactions[action.payload];
-      return { ...state, monthTransactions: newTransactions };
+      return { ...state, allTransactions: newTransactions };
+    }
+    case keys.DELETE_ALL_TRANSACTION: {
+      return { balance: 0, allTransactions: {} };
     }
     case keys.UPDATE_TRANSACTION: {
       return {
         ...state,
-        monthTransactions: {
-          ...state.monthTransactions,
+        allTransactions: {
+          ...state.allTransactions,
           [action.payload.id]: { ...action.payload }
         }
       };

@@ -7,11 +7,19 @@ export const calcBalance = (value: number) => {
   const balance = dinero({
     amount: value,
     currency: "BRL",
-    precision: 2,
   }).toFormat();
 
   return balance;
 };
+
+export const currencyView = (value: number) => {
+  const real = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  });
+  return real.format(value)
+}
+
 
 let store: Store | undefined;
 let persistor: Persistor | undefined;

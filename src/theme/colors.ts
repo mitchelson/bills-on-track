@@ -23,6 +23,7 @@ export const darkTheme = {
   grey200: "#222",
 
   grey_500: "#9E9E9E",
+  grey_600: "#999999",
 
   danger: "#A33",
 

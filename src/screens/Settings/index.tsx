@@ -3,6 +3,7 @@ import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { ArrowLeftIcon, ArrowRightIcon } from "react-native-heroicons/solid";
 import { useDispatch } from "react-redux";
+import { deleteAllTransaction } from "../../store/actions/transactions.actions";
 import { logOf } from "../../store/actions/user.actions";
 import * as S from "./styles";
 
@@ -10,6 +11,10 @@ const Settings = () => {
   const dispatch = useDispatch();
   const handleLogOf = async () => {
     dispatch(logOf());
+  };
+
+  const deleteTransaction = async () => {
+    dispatch(deleteAllTransaction());
   };
 
   return (
@@ -37,6 +42,15 @@ const Settings = () => {
                 <ArrowLeftIcon />
               </S.BoxIcons>
               <S.TextTitle>Ordem dos lançamentos</S.TextTitle>
+            </S.Row>
+            <ArrowRightIcon />
+          </S.Button>
+          <S.Button onPress={deleteTransaction}>
+            <S.Row>
+              <S.BoxIcons>
+                <ArrowLeftIcon />
+              </S.BoxIcons>
+              <S.TextTitle>Apagar transações</S.TextTitle>
             </S.Row>
             <ArrowRightIcon />
           </S.Button>

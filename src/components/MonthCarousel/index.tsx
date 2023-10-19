@@ -1,24 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import dayjs from "dayjs";
 import * as S from "./styles";
 
 type MonthCarousel = {
   setActualMonthView: (month: dayjs.Dayjs) => void;
+  currentMonth: dayjs.Dayjs;
 };
 
 export const MonthCarousel: React.FC<MonthCarousel> = ({
   setActualMonthView,
+  currentMonth,
 }) => {
-  const actualMonth = dayjs();
-  const [currentMonth, setActualMonth] = useState(actualMonth);
-
   const nextMonth = () => {
-    setActualMonth(currentMonth.add(1, "month"));
+    setActualMonthView(currentMonth.add(1, "month"));
   };
 
   const prevMonth = () => {
-    setActualMonth(currentMonth.add(-1, "month"));
+    setActualMonthView(currentMonth.add(-1, "month"));
   };
 
   useEffect(() => {
