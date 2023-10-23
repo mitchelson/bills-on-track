@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowLeftIcon } from "react-native-heroicons/solid";
-import Button from "../../../components/Button";
-import InputForm from "../../../components/InputForm";
+import Button from "../../../../core/ui/components/Button";
+import InputForm from "../../../../core/ui/components/InputForm";
 import { RegisterScreenProps } from "../../../types/navigation";
 import * as S from "./styles";
 

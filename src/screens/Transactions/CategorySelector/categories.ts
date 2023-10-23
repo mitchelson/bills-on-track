@@ -1,4 +1,4 @@
-import { CategoryPropsList } from "../../../components/CategoryIcons/type";
+import { CategoryPropsList } from "../../../../core/ui/components/CategoryIcons/type";
 
 export const categories: CategoryPropsList = {
   "home": {

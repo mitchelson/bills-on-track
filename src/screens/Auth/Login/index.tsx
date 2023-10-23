@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { ActivityIndicator, Image } from "react-native";
+import Button from "../../../../core/ui/components/Button";
+import InputForm from "../../../../core/ui/components/InputForm";
 import { LogoIcon } from "../../../assets";
 import IconGoogle from "../../../assets/icons/google.png";
-import Button from "../../../components/Button";
-import InputForm from "../../../components/InputForm";
 import { LoginScreenProps } from "../../../types/navigation";
 import * as S from "./styles";
 import { useLogin } from "./viewModel";

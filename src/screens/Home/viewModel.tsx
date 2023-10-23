@@ -5,13 +5,16 @@ import { fullMonth } from "../../../core/date";
 
 export const useHomeView = () => {
   const user = useSelector((state) => state.user.profile);
-  const { balance, transactions } = useSelector((state) => state.transactions);
+  const { accounts, allTransactions } = useSelector(
+    (state) => state.transactions,
+  );
 
   const { navigate } = useNavigation();
 
   const [revenue, setRevenue] = useState(120000);
   const [expenses, setExpenses] = useState(115120);
   const [expected, setExpected] = useState(0);
+  const [actualBalance, setBalance] = useState(0);
 
   const [loadTransactions, setLoadingTransactions] = useState(false);
 
@@ -20,12 +23,17 @@ export const useHomeView = () => {
   };
 
   useEffect(() => {
-    setExpected(balance + revenue - expenses);
-  }, [balance]);
+    let tempTotalBalance = 0;
+    Object.keys(accounts).forEach((e) => {
+      tempTotalBalance += accounts[e].balance;
+    });
+    setBalance(tempTotalBalance);
+    setExpected(tempTotalBalance + revenue - expenses);
+  }, [accounts]);
 
   return {
     user,
-    balance,
+    balance: actualBalance,
     loadTransactions,
     expenses,
     expected,

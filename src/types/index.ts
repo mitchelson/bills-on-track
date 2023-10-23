@@ -324,6 +324,7 @@ export type BillDTO = {
   createdAt: string; // data da criação do transação
   updatedAt?: string; // data da atualização da transação
   monthTransaction: string;
+  accountId: string; // id da conta da transação
 };
 
 export type StateTransactions = {

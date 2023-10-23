@@ -1,8 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
+import Button from "../../../../core/ui/components/Button";
+import InputForm from "../../../../core/ui/components/InputForm";
 import { LogoIcon } from "../../../assets";
-import Button from "../../../components/Button";
-import InputForm from "../../../components/InputForm";
 import { RecoverPassScreenProps } from "../../../types/navigation";
 import * as S from "./styles";
 import { useLogin } from "./viewModel";

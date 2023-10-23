@@ -1,8 +1,8 @@
 import React from "react";
 import { FlatList, ListRenderItem } from "react-native";
 import { CheckIcon } from "react-native-heroicons/solid";
-import CategoryIcon from "../../../components/CategoryIcons";
-import { CategoriesList } from "../../../components/CategoryIcons/type";
+import CategoryIcon from "../../../../core/ui/components/CategoryIcons";
+import { CategoriesList } from "../../../../core/ui/components/CategoryIcons/type";
 import { categories } from "./categories";
 import * as S from "./styles";
 

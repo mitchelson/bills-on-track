@@ -2,9 +2,9 @@ import dayjs from "dayjs";
 import { isEmpty } from "lodash";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { MonthCarousel } from "../../../core/ui/components/MonthCarousel";
+import { ReportItem } from "../../../core/ui/components/ReportItem";
 import { currencyView } from "../../common";
-import { MonthCarousel } from "../../components/MonthCarousel";
-import { ReportItem } from "../../components/ReportItem";
 import * as S from "./styles";
 
 type Section = {

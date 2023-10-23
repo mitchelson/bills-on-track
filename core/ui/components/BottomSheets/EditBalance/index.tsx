@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
-import { calcBalance } from "../../../common";
-import { setBalance } from "../../../store/actions/transactions.actions";
+import { calcBalance } from "../../../../../src/common";
+import { setBalance } from "../../../../../src/store/actions/transactions.actions";
 import Button from "../../Button";
 import * as S from "./styles";
 

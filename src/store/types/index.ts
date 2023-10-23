@@ -8,5 +8,14 @@ export interface InitialStateTransactions {
       }
     }
   };
-  balance: number;
+}
+
+export interface InitialStateAccounts {
+  accounts: {
+    [x: string]: {
+      balance: number;
+      name: string;
+      image: string;
+    }
+  }
 }

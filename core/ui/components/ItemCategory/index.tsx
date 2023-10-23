@@ -1,6 +1,6 @@
 import React from "react";
 
-import { categories } from "../../screens/Transactions/CategorySelector/categories";
+import { categories } from "../../../../src/screens/Transactions/CategorySelector/categories";
 import CategoryIcon from "../CategoryIcons";
 import { CategoriesList } from "../CategoryIcons/type";
 import * as S from "./styles";

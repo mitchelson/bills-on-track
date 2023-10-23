@@ -1,6 +1,6 @@
 import React from "react";
-import { calcBalance } from "../../common";
-import { MonthlyFinanceProps } from "../../types";
+import { calcBalance } from "../../../../src/common";
+import { MonthlyFinanceProps } from "../../../../src/types";
 import * as S from "./styles";
 
 const MonthlyFinanceBox: React.FC<MonthlyFinanceProps> = (props) => {

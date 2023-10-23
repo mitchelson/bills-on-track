@@ -1,9 +1,9 @@
 import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 import { PencilIcon } from "react-native-heroicons/solid";
+import MonthlyFinanceBox from "../../../core/ui/components/MonthlyFinanceBox";
+import NewTransactionButton from "../../../core/ui/components/NewTransactionButton";
 import { calcBalance } from "../../common";
-import MonthlyFinanceBox from "../../components/MonthlyFinanceBox";
-import NewTransactionButton from "../../components/NewTransactionButton";
 import * as S from "./styles";
 import { useHomeView } from "./viewModel";
 
@@ -36,7 +36,7 @@ const Home = () => {
         </S.Row>
 
         <S.BoxBalance>
-          <S.TitleBalance>Saldo atual</S.TitleBalance>
+          <S.TitleBalance>Balanço total</S.TitleBalance>
           <S.Row>
             <S.BoxMoney>
               <S.BalanceCents>R$</S.BalanceCents>

@@ -1,5 +1,5 @@
 import * as MiniIcons from "react-native-heroicons/mini";
-import { categories } from "../../screens/Transactions/CategorySelector/categories";
+import { categories } from "../../../../src/screens/Transactions/CategorySelector/categories";
 import * as S from "./styles";
 import { CategoriesList } from "./type";
 

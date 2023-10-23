@@ -1,8 +1,8 @@
 import React from "react";
 
 import { useNavigation } from "@react-navigation/native";
-import { currencyView } from "../../common";
-import { BillDTO } from "../../types";
+import { currencyView } from "../../../../src/common";
+import { BillDTO } from "../../../../src/types";
 import CategoryIcon from "../CategoryIcons";
 import * as S from "./styles";
 

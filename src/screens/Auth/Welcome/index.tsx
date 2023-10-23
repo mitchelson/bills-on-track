@@ -1,6 +1,6 @@
 import React from "react";
+import Button from "../../../../core/ui/components/Button";
 import { imageLoginScreen } from "../../../assets";
-import Button from "../../../components/Button";
 import { WelcomeScreenProps } from "../../../types/navigation";
 import * as S from "./styles";
 

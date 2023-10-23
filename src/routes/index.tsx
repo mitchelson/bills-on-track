@@ -1,8 +1,11 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { BOTTOM_SHEET_OPTIONS, bottomSheets } from "../components/BottomSheets";
-import { WrapWithBottomSheet } from "../components/BottomSheets/BottomSheet";
+import {
+  BOTTOM_SHEET_OPTIONS,
+  bottomSheets,
+} from "../../core/ui/components/BottomSheets";
+import { WrapWithBottomSheet } from "../../core/ui/components/BottomSheets/BottomSheet";
 import StackRoutes from "./app.route";
 import AuthRoutes from "./auth.route";
 

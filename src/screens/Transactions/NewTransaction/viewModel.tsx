@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { CategoriesList } from "../../../components/CategoryIcons/type";
+import { CategoriesList } from "../../../../core/ui/components/CategoryIcons/type";
 import { createNewTransaction } from "../../../store/actions/transactions.actions";
 import { BillDTO } from "../../../types";
 import { NewTransactionProps } from "../../../types/navigation";
@@ -54,7 +54,7 @@ export const useNewTransaction = ({
   };
 
   const handleSetAccount = () => {
-    // navigation.navigate("AccountSelector");
+    navigation.navigate("AccountSelector");
   };
 
   const handleSetDate = () => {

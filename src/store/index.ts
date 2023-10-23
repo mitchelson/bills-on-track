@@ -11,7 +11,7 @@ export default (features = [], initialState = {}) => {
   const persistConfig = {
     key: "@BOT:",
     storage: AsyncStorage,
-    whitelist: ["transactions", "user"],
+    whitelist: ["transactions", "user", "accounts"],
     stateReconciler: autoMergeLevel2,
   };
 
