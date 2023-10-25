@@ -10,7 +10,7 @@ import * as S from "./styles";
 const EditBalance = () => {
   const { goBack } = useNavigation();
   const dispatch = useDispatch();
-  const { balance } = useSelector((store) => store.transactions);
+  const { allTransactions } = useSelector((store) => store.transactions);
 
   const [balanceField, setBalanceField] = useState(0);
   const [warningLabel, setWarningLabel] = useState("");

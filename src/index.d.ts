@@ -9,6 +9,7 @@ declare module "react-redux" {
 
   export type RootState = {
     user: typeof import("./store/reducers/user.reducer").initialState;
+    accounts: typeof import("./store/reducers/accounts.reducer").initialState;
     transactions: typeof import("./store/reducers/transactions.reducer").initialState;
   };
 

@@ -8,6 +8,7 @@ import { DefaultTheme } from "styled-components/native";
 import { injectStore } from "./src/common";
 import Routes from "./src/routes";
 import createStore from "./src/store";
+import accounts from "./src/store/reducers/accounts.reducer";
 import transactions from "./src/store/reducers/transactions.reducer";
 import user from "./src/store/reducers/user.reducer";
 import { darkTheme } from "./src/theme/colors";
@@ -16,6 +17,7 @@ const { store, persistor } = createStore({
   // @ts-expect-error TS(2345): Argument of type '{ auth: (state: { isLogged: bool... Remove this comment to see the full error message
   user,
   transactions,
+  accounts,
 });
 
 injectStore(store, persistor);

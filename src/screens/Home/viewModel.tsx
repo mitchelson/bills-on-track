@@ -5,9 +5,8 @@ import { fullMonth } from "../../../core/date";
 
 export const useHomeView = () => {
   const user = useSelector((state) => state.user.profile);
-  const { accounts, allTransactions } = useSelector(
-    (state) => state.transactions,
-  );
+  const allTransactions = useSelector((state) => state.transactions);
+  const accounts = useSelector((state) => state.accounts.accounts);
 
   const { navigate } = useNavigation();
 
@@ -23,8 +22,9 @@ export const useHomeView = () => {
   };
 
   useEffect(() => {
+    console.log("accounts => ", accounts);
     let tempTotalBalance = 0;
-    Object.keys(accounts).forEach((e) => {
+    Object.keys(accounts)?.forEach((e) => {
       tempTotalBalance += accounts[e].balance;
     });
     setBalance(tempTotalBalance);
