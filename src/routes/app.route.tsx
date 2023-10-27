@@ -1,12 +1,14 @@
 import {
-  Entypo,
-  MaterialCommunityIcons,
-  MaterialIcons,
-} from "@expo/vector-icons";
+  ArrowsRightLeftIcon,
+  ChartBarIcon,
+  ChartPieIcon,
+  HomeIcon,
+} from "react-native-heroicons/mini";
+
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
-import { Bars3CenterLeftIcon } from "react-native-heroicons/solid";
+import { BoxIconBar, IndicatorBar } from "../common/styles";
 import Home from "../screens/Home";
 import Report from "../screens/Report";
 import Settings from "../screens/Settings";
@@ -31,9 +33,13 @@ const AppRoutes = () => {
         tabBarStyle: {
           backgroundColor: "#fff",
           shadowColor: "#000",
-          shadowOpacity: 0.2,
-          shadowRadius: 16,
-          elevation: 20,
+          shadowOpacity: 0.1,
+          shadowRadius: 10,
+          shadowOffset: {
+            height: 2,
+            width: 0,
+          },
+          elevation: 1,
           borderTopLeftRadius: 16,
           borderTopRightRadius: 16,
         },
@@ -48,7 +54,10 @@ const AppRoutes = () => {
             height: 40,
           },
           tabBarIcon: ({ focused, color }) => (
-            <Entypo name="home" size={24} color={focused ? color : "black"} />
+            <BoxIconBar>
+              <IndicatorBar focused={focused} />
+              <HomeIcon size={24} color={!focused ? "#9E9E9E" : "black"} />
+            </BoxIconBar>
           ),
         }}
         name="Home"
@@ -64,11 +73,13 @@ const AppRoutes = () => {
             height: 40,
           },
           tabBarIcon: ({ focused, color }) => (
-            <MaterialIcons
-              name="sync-alt"
-              size={24}
-              color={focused ? color : "black"}
-            />
+            <BoxIconBar>
+              <IndicatorBar focused={focused} />
+              <ArrowsRightLeftIcon
+                size={24}
+                color={!focused ? "#9E9E9E" : "black"}
+              />
+            </BoxIconBar>
           ),
         }}
         name="Report"
@@ -84,7 +95,10 @@ const AppRoutes = () => {
             height: 40,
           },
           tabBarIcon: ({ focused, color }) => (
-            <Bars3CenterLeftIcon color={focused ? color : "black"} />
+            <BoxIconBar>
+              <IndicatorBar focused={focused} />
+              <ChartBarIcon size={24} color={!focused ? "#9E9E9E" : "black"} />
+            </BoxIconBar>
           ),
         }}
         name="Sync"
@@ -98,13 +112,11 @@ const AppRoutes = () => {
             width: 62,
             height: 40,
           },
-
           tabBarIcon: ({ focused, color }) => (
-            <MaterialCommunityIcons
-              name="account"
-              size={24}
-              color={focused ? color : "black"}
-            />
+            <BoxIconBar>
+              <IndicatorBar focused={focused} />
+              <ChartPieIcon size={24} color={!focused ? "#9E9E9E" : "black"} />
+            </BoxIconBar>
           ),
         }}
         name="Settings"

@@ -1,5 +1,5 @@
 import React from "react";
-import { calcBalance } from "../../../../src/common";
+import { currencyView } from "../../../../src/common";
 import { MonthlyFinanceProps } from "../../../../src/types";
 import * as S from "./styles";
 
@@ -11,21 +11,21 @@ const MonthlyFinanceBox: React.FC<MonthlyFinanceProps> = (props) => {
         <S.BoxValue>
           <S.ValueTitleText>Receitas Previstas</S.ValueTitleText>
           <S.ValueText type={"current"}>
-            {calcBalance(props.expectedRevenue)}
+            {currencyView(props.expectedRevenue)}
           </S.ValueText>
         </S.BoxValue>
         <S.Divider />
         <S.BoxValue>
           <S.ValueTitleText>Gastos Previstos</S.ValueTitleText>
           <S.ValueText type={"expenses"}>
-            {calcBalance(props.monthlyExpenses)}
+            {currencyView(props.monthlyExpenses)}
           </S.ValueText>
         </S.BoxValue>
         <S.Divider />
         <S.BoxValue>
           <S.ValueTitleText>Saldo Previsto</S.ValueTitleText>
           <S.ValueText type={"expected"}>
-            {calcBalance(props.expectedBalance)}
+            {currencyView(props.expectedBalance)}
           </S.ValueText>
         </S.BoxValue>
       </S.Box>

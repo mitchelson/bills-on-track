@@ -2,12 +2,11 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
   width: 100%;
-  margin-top: 20px;
-  padding: 10px;
-  height: auto;
+  margin-top: 10px;
+  padding: 16px;
   border-radius: 10px;
   align-items: center;
-  background-color: ${({ theme }) => theme.grey_100};
+  background-color: ${({ theme }) => theme.white};
 `;
 
 export const Box = styled.View`
@@ -46,6 +45,7 @@ export const ValueText = styled.Text<ValueTextProps>`
   color: ${({ theme, type }) => type === "expenses" ? theme.danger : type === "current" ? theme.greenColor : theme.blueColor};
   font-size: 28px;
   margin-top: 10px;
+  font-weight: 500;
 `;
 
 export const BoxValue = styled.View`

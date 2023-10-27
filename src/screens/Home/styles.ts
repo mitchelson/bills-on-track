@@ -1,18 +1,19 @@
 import { osName } from "expo-device";
+import { initialWindowMetrics } from 'react-native-safe-area-context';
 import styled from "styled-components/native";
 
 export const UserImage = styled.Image`
   width: 64px;
   height: 64px;
   border-radius: 32px;
-  background: #fff;
+  background: #F2F4EF;
 `;
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.View`
   width: 100%;
   flex: 1;
-  padding: 16px;
-  background-color: ${({ theme }) => theme.background};
+  
+  background-color: #F2F4EF;
 `;
 
 export const Content = styled.ScrollView`
@@ -20,12 +21,12 @@ export const Content = styled.ScrollView`
 `;
 
 export const Title = styled.Text`
-  color: ${({ theme }) => theme.title};
+  color: ${({ theme }) => theme.white};
   font-size: 16px;
 `;
 
 export const Name = styled.Text`
-  color: ${({ theme }) => theme.title};
+  color: ${({ theme }) => theme.white};
   font-size: 25px;
   font-weight: bold;
 `;
@@ -37,26 +38,26 @@ export const BoxBalance = styled.View`
   flex: 1;
   padding: 20px;
   border-radius: 10px;
-  margin-top: 20px;
   overflow: hidden;
-  background-color: ${({ theme }) => theme.grey_100};
+  background-color: ${({ theme }) => theme.white};
 `;
 
 export const TitleBalance = styled.Text`
-  color: ${({ theme }) => theme.title};
-  font-size: 20px;
+  color: #9E9E9E;
+  font-size: 15px;
+  font-weight: 500;
   margin-bottom: 5px;
 `;
 
 export const Balance = styled.Text`
   color: ${({ theme }) => theme.title};
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
 `;
 
 export const BalanceCents = styled.Text`
   color: ${({ theme }) => theme.title};
-  font-size: 30px;
+  font-size: 25px;
 `;
 
 export const BalanceContainer = styled.View`
@@ -82,13 +83,38 @@ export const Avatar = styled.Image`
   margin-right: 10px;
 `;
 
+export const Header = styled.View`
+  width: 100%;
+  background-color: #16C64F;
+  flex-direction: row;
+  align-items: center;
+  padding: ${(initialWindowMetrics?.insets.top || 0) + 16}px 16px 16px 16px;
+`;
+
 export const Row = styled.View`
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
 `;
 
-export const Box = styled.View``;
+export const Box = styled.View`
+  margin-left: 5px;
+`;
+
+export const BoxAvatar = styled.View``;
+
+export const BoxIcon = styled.View`
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: white;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  bottom: 0px;
+  right: 5px;
+`;
 
 export const BoxMoney = styled.View`
   flex-direction: row;

@@ -18,7 +18,7 @@ export const HeaderNewTransaction: React.FC<HeaderNewTransactionProps> = ({
         type={"outcome"}
         activeType={transactionType}
       >
-        <ArrowTrendingUpIcon
+        <ArrowTrendingDownIcon
           color={transactionType === "outcome" ? darkTheme.red_500 : "gray"}
         />
         <S.TypeText type={"outcome"} activeType={transactionType}>
@@ -30,7 +30,7 @@ export const HeaderNewTransaction: React.FC<HeaderNewTransactionProps> = ({
         type={"income"}
         activeType={transactionType}
       >
-        <ArrowTrendingDownIcon
+        <ArrowTrendingUpIcon
           color={transactionType === "income" ? darkTheme.green_500 : "gray"}
         />
         <S.TypeText type={"income"} activeType={transactionType}>

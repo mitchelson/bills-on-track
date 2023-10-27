@@ -21,22 +21,21 @@ const Home = () => {
 
   return (
     <S.Container>
+      <S.Header>
+        <S.BoxAvatar>
+          <S.BoxIcon>
+            <Ionicons size={15} color="#16C64F" name="person" />
+          </S.BoxIcon>
+          <S.Avatar source={{ uri: user?.picture }} />
+        </S.BoxAvatar>
+        <S.Box>
+          <S.Title>Bem Vindo,</S.Title>
+          <S.Name>{user?.given_name}</S.Name>
+        </S.Box>
+      </S.Header>
       <S.Content>
-        <S.Row>
-          <S.Row>
-            <S.Avatar source={{ uri: user?.picture }} />
-            <S.Box>
-              <S.Title>Bem Vindo</S.Title>
-              <S.Name>{user?.given_name}</S.Name>
-            </S.Box>
-          </S.Row>
-          <S.Notification>
-            <Ionicons name="notifications-outline" size={32} color="white" />
-          </S.Notification>
-        </S.Row>
-
         <S.BoxBalance>
-          <S.TitleBalance>Balanço total</S.TitleBalance>
+          <S.TitleBalance>Saldo geral</S.TitleBalance>
           <S.Row>
             <S.BoxMoney>
               <S.BalanceCents>R$</S.BalanceCents>

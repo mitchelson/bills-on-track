@@ -76,7 +76,7 @@ const Report = () => {
   useEffect(() => {
     mountSectionData();
     calcMonthBalance();
-  }, [actualMonthView]);
+  }, [actualMonthView, allTransactions]);
 
   return (
     <S.Container>
