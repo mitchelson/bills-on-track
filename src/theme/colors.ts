@@ -14,7 +14,7 @@ export const darkTheme = {
   black: "#000",
   white: "#fff",
   greenColor: '#008440',
-  blueColor: '#6495ED',
+  blueColor: '#4285F4',
 
   grey_100: "#eee",
   grey_200: "#ddd",

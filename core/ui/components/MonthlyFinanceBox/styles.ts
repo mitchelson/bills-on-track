@@ -1,9 +1,40 @@
 import styled from "styled-components/native";
 
+export const BoxBalance = styled.View`
+  justify-content: center;
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  background-color: ${({ theme }) => theme.white};
+`;
+export const BoxMoney = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+export const AnticipatedValue = styled.Text`
+  color: ${({ theme }) => theme.title};
+  font-weight: 600;
+  font-size: 14px;
+`;
+export const Balance = styled.Text`
+  color: ${({ theme }) => theme.title};
+  font-weight: bold;
+  font-size: 20px;
+`;
+export const TitleValue = styled.Text`
+  color: #9e9e9e;
+  font-weight: 300;
+  font-size: 10px;
+`;
+export const TitleBalance = styled.Text`
+  color: #9e9e9e;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 5px;
+`;
 export const Container = styled.View`
   width: 100%;
-  margin-top: 10px;
-  padding: 16px;
+  padding: 20px 16px;
   border-radius: 10px;
   align-items: center;
   background-color: ${({ theme }) => theme.white};
@@ -16,7 +47,7 @@ export const Box = styled.View`
 
 export const Row = styled.View`
   flex-direction: row;
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 
 export const Divider = styled.View`
@@ -38,11 +69,16 @@ export const ValueTitleText = styled.Text`
 `;
 
 type ValueTextProps = {
-  type: "current" | "expenses" | "expected"
-}
+  type: "current" | "expenses" | "expected";
+};
 
 export const ValueText = styled.Text<ValueTextProps>`
-  color: ${({ theme, type }) => type === "expenses" ? theme.danger : type === "current" ? theme.greenColor : theme.blueColor};
+  color: ${({ theme, type }) =>
+    type === "expenses"
+      ? theme.danger
+      : type === "current"
+      ? theme.greenColor
+      : theme.blueColor};
   font-size: 28px;
   margin-top: 10px;
   font-weight: 500;
