@@ -44,8 +44,8 @@ export const BoxBalance = styled.View`
 
 export const TitleBalance = styled.Text`
   color: #9E9E9E;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   margin-bottom: 5px;
 `;
 
@@ -53,6 +53,16 @@ export const Balance = styled.Text`
   color: ${({ theme }) => theme.title};
   font-weight: bold;
   font-size: 25px;
+`;
+export const AnticipatedValue = styled.Text`
+  color: ${({ theme }) => theme.title};
+  font-weight: 600;
+  font-size: 14px;
+`;
+export const TitleValue = styled.Text`
+  color: #9E9E9E;
+  font-weight: 300;
+  font-size: 10px;
 `;
 
 export const BalanceCents = styled.Text`
