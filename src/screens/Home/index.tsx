@@ -14,6 +14,7 @@ import { calcBalance } from "../../common";
 import * as S from "./styles";
 import { useHomeView } from "./viewModel";
 import { View } from "react-native";
+
 import { GeneralAccount } from "../../../core/ui/components/GeneralAccount";
 
 const Home = () => {
