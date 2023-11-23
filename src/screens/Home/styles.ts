@@ -18,6 +18,7 @@ export const Container = styled.View`
 
 export const Content = styled.ScrollView`
   padding: 16px;
+  width: 100%;
 `;
 
 export const Title = styled.Text`
@@ -42,17 +43,10 @@ export const BoxBalance = styled.View`
   background-color: ${({ theme }) => theme.white};
 `;
 
-export const TitleBalance = styled.Text`
+export const TitleValue = styled.Text`
   color: #9E9E9E;
-  font-size: 16px;
-  font-weight: 400;
-  margin-bottom: 5px;
-`;
-
-export const Balance = styled.Text`
-  color: ${({ theme }) => theme.title};
-  font-weight: bold;
-  font-size: 25px;
+  font-weight: 300;
+  font-size: 10px;
 `;
 export const AnticipatedValue = styled.Text`
   color: ${({ theme }) => theme.title};
@@ -126,10 +120,7 @@ export const BoxIcon = styled.View`
   right: 5px;
 `;
 
-export const BoxMoney = styled.View`
-  flex-direction: row;
-  align-items: center;
-`;
+
 
 export const Notification = styled.TouchableOpacity`
 width: 48px;
