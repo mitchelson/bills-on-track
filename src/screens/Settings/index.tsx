@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons,MaterialIcons } from "@expo/vector-icons";
 import { ArrowLeftIcon, ArrowRightIcon } from "react-native-heroicons/solid";
 import { useDispatch } from "react-redux";
 import { deleteAllTransaction } from "../../store/actions/transactions.actions";
@@ -20,42 +20,120 @@ const Settings = () => {
   return (
     <S.Container>
       <S.Content>
-        <S.TitlePage>Configurações</S.TitlePage>
+        <S.TitlePage>Geral</S.TitlePage>
         <S.General>
           <S.Button>
+            
             <S.Row>
               <S.BoxIcons>
                 <Ionicons
                   name="moon"
-                  size={32}
+                  size={24}
                   color="white"
                   style={{ padding: 4 }}
                 />
               </S.BoxIcons>
               <S.TextTitle>Tema</S.TextTitle>
             </S.Row>
-            <ArrowLeftIcon />
+            <MaterialIcons
+                  name="keyboard-arrow-right"
+                  size={24}
+                  color="#212121"
+                  style={{ padding: 4 }}
+                />
           </S.Button>
+
           <S.Button>
             <S.Row>
               <S.BoxIcons>
-                <ArrowLeftIcon />
+              <MaterialIcons
+                  name="import-export"
+                  size={24}
+                  color="white"
+                  style={{ padding: 4 }}
+                />
               </S.BoxIcons>
               <S.TextTitle>Ordem dos lançamentos</S.TextTitle>
             </S.Row>
-            <ArrowRightIcon />
+            <MaterialIcons
+                  name="keyboard-arrow-right"
+                  size={24}
+                  color="#212121"
+                  style={{ padding: 4 }}
+                />
           </S.Button>
+        <S.TitlePage>Segurança</S.TitlePage>
+
           <S.Button onPress={deleteTransaction}>
             <S.Row>
               <S.BoxIcons>
-                <ArrowLeftIcon />
+              <MaterialIcons
+                  name="vpn-key"
+                  size={24}
+                  color="white"
+                  style={{ padding: 4 }}
+                />
               </S.BoxIcons>
-              <S.TextTitle>Apagar transações</S.TextTitle>
+              <S.TextTitle>Opções de acesso</S.TextTitle>
             </S.Row>
-            <ArrowRightIcon />
+            <MaterialIcons
+                  name="keyboard-arrow-right"
+                  size={24}
+                  color="#212121"
+                  style={{ padding: 4 }}
+                />
+          </S.Button>
+        <S.TitlePage>Outras opções</S.TitlePage>
+        <S.Button onPress={deleteTransaction}>
+            <S.Row>
+              
+              <S.TextTitle>Excluir todas as minhas movimentações</S.TextTitle>
+            </S.Row>
+            <MaterialIcons
+                  name="keyboard-arrow-right"
+                  size={24}
+                  color="#212121"
+                  style={{ padding: 4 }}
+                />
+          </S.Button>
+        <S.Button onPress={deleteTransaction}>
+            <S.Row>
+              
+              <S.TextTitle style={{color:'#E8453E'}} >Excluir conta</S.TextTitle>
+            </S.Row>
+            <MaterialIcons
+                  name="keyboard-arrow-right"
+                  size={24}
+                  color="#E8453E"
+                  style={{ padding: 4 }}
+                />
+          </S.Button>
+        <S.Button onPress={deleteTransaction}>
+            <S.Row>
+              
+              <S.TextTitle>Políticas de privacidade</S.TextTitle>
+            </S.Row>
+            <MaterialIcons
+                  name="keyboard-arrow-right"
+                  size={24}
+                  color="#212121"
+                  style={{ padding: 4 }}
+                />
+          </S.Button>
+        <S.Button onPress={deleteTransaction}>
+            <S.Row>
+              
+              <S.TextTitle>Termos de uso</S.TextTitle>
+            </S.Row>
+            <MaterialIcons
+                  name="keyboard-arrow-right"
+                  size={24}
+                  color="#212121"
+                  style={{ padding: 4 }}
+                />
           </S.Button>
         </S.General>
-
+       
         {/* <S.Security>
           <S.Button>
             <Ionicons
@@ -81,9 +159,18 @@ const Settings = () => {
           </S.Button>
         </S.Security> */}
       </S.Content>
-      <S.Button onPress={handleLogOf}>
-        <S.TextButton>Sair</S.TextButton>
-      </S.Button>
+      <S.Button style={{position:'absolute', bottom:0, paddingHorizontal:16, width:'100%'}} onPress={deleteTransaction}>
+            <S.Row>
+              
+              <S.TextTitle style={{color:'#E8453E'}}>Sair do app</S.TextTitle>
+            </S.Row>
+            <MaterialIcons
+                  name="logout"
+                  size={24}
+                  color="#E8453E"
+                  style={{ padding: 4 }}
+                />
+          </S.Button>
     </S.Container>
   );
 };
